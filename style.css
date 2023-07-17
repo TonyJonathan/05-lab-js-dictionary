@@ -1,0 +1,271 @@
+:root{
+    font-size: 100%;
+    --color-degrade1 : #232A34;
+    --color-degrade2 : #181E27;
+    --color-button : #262E38;
+    --color-number : #7C8798;
+    --color-orange : #FC7614;
+    --color-white : #FFFFFF;
+    --color-grey : #969FAD;
+    --color-background : #131518;
+}
+
+body{
+    margin: 0;
+}
+
+#header{
+    width: 1440px;
+    display: flex;
+}
+
+#logo{
+    display: grid;
+}
+
+#header > img:nth-child(1){
+    margin-top: 65px;
+    margin-left: 41px;
+}
+
+#rectangle{
+    width: 46px;
+    max-height: 22px;
+    margin-top: 80px;
+    margin-left: 100px;
+    background-color: #000;
+    border-radius: 11px;
+}
+
+#rectangle:hover{
+    background-color: #707070;
+    cursor: pointer;
+}
+
+#circle{
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;
+    margin-left: 26px;
+    background-color: #FFF;
+    border-radius: 11px;
+}
+
+ #header > input:nth-child(3){
+    width: 323px;
+    border-radius: 20px 0px 0px 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 32px;
+    border: 2px solid #43A2B7;
+    margin-top: 72px;
+    margin-bottom: 29px;
+    margin-left: 30px;
+    outline: none;
+}
+
+#header > input:nth-child(3):hover, #header > input:nth-child(3):focus {
+    border: 2px solid #16C4EA ;
+}
+
+#header > input:nth-child(3):hover~ #search, #header > input:nth-child(3):focus~ #search {
+    background-color: #16C4EA;
+}
+
+#search{
+    width: 35px;
+    border-radius: 0px 20px 20px 0px;
+    background-color: #43A2B7;
+    padding-top: 8px;
+    padding-bottom: 7px;
+    padding-left: 14px;
+    margin-top: 72px;
+    margin-bottom: 29px;
+}
+
+#header > p:nth-child(5){
+    width: 375px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #145462;
+    line-height: 27px;
+    margin: 0;
+    margin-top: 78px;
+    margin-left: 113px;
+}
+
+.onglet{
+    width: 250px;
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 700;
+    color: white;
+    background-color: #707070;
+    opacity: 0.70;
+    padding-top: 10px;
+    padding-bottom: 3px;
+    text-align: center;
+    border-radius: 25px 25px 0px 0px;
+    margin: 0;
+}
+
+#page > p:first-child{
+    background-color: #43A2B7;
+    opacity: 1;
+    margin: 0;
+}
+
+#page{
+    display: flex;
+    margin-top: 79px;
+    margin-left: 43px;
+}
+
+#line{
+    width: 1150px;
+    background-color: #16C4EA;
+    height: 2px;
+    margin-left: 27px;
+}
+
+#buttonRow{
+    display: flex;
+    margin-left: 20px;
+}
+
+label{
+    width: 250px;
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 700;
+    color: white;
+    background-color: #707070;
+    opacity: 0.70;
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 3px;
+    text-align: center;
+    border-radius: 25px 25px 0px 0px;
+    margin: 0;
+}
+
+#buttonRow > .button:last-child > label{
+    margin: 0;
+}
+
+label:hover{
+    background-color: #43A2B7;
+    opacity: 0.5;
+    cursor: pointer;
+} 
+
+input:checked +label{
+    opacity: 1;
+    background-color: #43A2B7;
+}
+
+.button > input {
+    display: none;
+}
+
+#mot{
+    display: flex;
+}
+
+#mot > p:first-child, #synonyms > p, #antonyms > p{
+    text-transform: capitalize;
+}
+
+#mot > p:nth-child(1){
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 87px;
+    margin: 0;
+    margin-top: 54px;
+    margin-left: 102px;
+}
+
+#mot > p:nth-child(2){
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 46px;
+    margin: 0;
+    color: #5E5E5E;
+    margin:0;
+    margin-top: 75px;
+    margin-left: 35px;
+}
+
+#mot > p:nth-child(3){
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 46px;
+    margin:0;
+    margin-top: 75px;
+    margin-left: 35px;
+    color: #5E5E5E;
+    font-style: italic;
+}
+
+#mot > img:nth-child(4){
+    margin-top: 75px;
+    margin-left: 29px;
+    border: 2px solid #FFF;
+}
+
+#mot > img:nth-child(4):hover{
+    border: 2px solid #16C4EA;
+    cursor: pointer;
+}
+
+#blackline{
+    width: 1000px;
+    background-color: #000000;
+    height: 1px;
+    margin-left: 59px;
+    margin-bottom: 59px;
+}
+
+.blackcircle{
+    width: 15px;
+    height: 15px;
+    background-color: #2B2B2B;
+    border-radius: 11px;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    margin-left: 57px;
+    margin-bottom: 26px;
+}
+
+.flex > p{
+    font-size: 18px;
+    line-height: 23px;
+    font-weight: 500;
+    margin: 0;
+    margin-left: 24px;
+    color: #2B2B2B;
+}
+
+.flexRow{
+    display: flex;
+    margin-bottom: 60px;
+}
+
+
+.flexRow > .flex{
+    width: 220px;
+}
+
+.flexRow > .flex > p{
+    font-size: 24px;
+    line-height: 34px;
+   color: #2B2B2B;
+}
+
+#definition , #examples, #synonyms, #antonyms, #mot, #blackline{
+
+}
+
