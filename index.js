@@ -110,8 +110,10 @@ function searchButton(){
     let tableauExample = findExample(data[0].meanings[0].definitions); 
     let tableauSynonym = findSynonyms(data[0].meanings[0].definitions); 
     let tableauAntonym = findAntonyms(data[0].meanings[0].definitions); 
+
+    // trouve tous les exemples dans les .definitions sans afficher les vides //
     
-    function findExample(i){      // trouve tous les exemples dans les .definitions sans afficher les vides // 
+    function findExample(i){       
         var examplesResult = [];    
         i.forEach(element => {
             if(element.example != undefined ){
@@ -123,7 +125,7 @@ function searchButton(){
         
     }
 
-    // pour les synonyms// 
+    // pour les synonymes// 
 
     function findSynonyms(i){      
         let synonymResult = [];    
@@ -140,6 +142,8 @@ function searchButton(){
         return synonymResult; 
     }
 
+    // pour les antonymes// 
+
     function findAntonyms(i){     
         let antonymResult = [];    
         i.forEach(element => {
@@ -155,17 +159,12 @@ function searchButton(){
         return antonymResult; 
     }
 
-    
     findExample(data[0].meanings[0].definitions); 
     findSynonyms(data[0].meanings[0].definitions);
     findAntonyms(data[0].meanings[0].definitions);  
 
-    
-    console.log(tableauExample); 
-    console.log(tableauSynonym); 
-    console.log(tableauAntonym); 
-    console.log(data[0].meanings[0].definitions); 
 
+    // la fonction retrieve est composée de sous-fonctions qui permettent d'aller rechercher dans la data de l'API les informations concernant les def-ex-syn-ant et de les ajouter au bon endroit en fonction de leurs nombres et de la fonction convertElementInNumber, elle permet aussi de transformer en "" les p qui ne sont pas concernés et leurs points. // 
 
     function retrieve(w, x, y, z){
 
@@ -177,7 +176,6 @@ function searchButton(){
             defSlot.textContent = "";
             addInfo(defSlot, defNumber);
             defCircleNumber.style.display = 'block'; 
-            console.log(defSlot); 
         }
 
         function showExamples(a){
@@ -188,7 +186,6 @@ function searchButton(){
             exampleSlot.textContent = "";
             addInfo(exampleSlot, exampleNumber);
             exampleCircleNumber.style.display = 'block'; 
-            console.log(exampleSlot); 
         }
 
         function showSynonyms(a){
@@ -199,7 +196,6 @@ function searchButton(){
             synonymSlot.textContent = "";
             addInfo(synonymSlot, synonymNumber);
             synonymCircleNumber.style.display = 'block'; 
-            console.log(synonymSlot); 
         }
 
         function showAntonyms(a){
@@ -209,29 +205,24 @@ function searchButton(){
 
             antonymSlot.textContent = "";
             addInfo(antonymSlot, antonymNumber);
-            antonymCircleNumber.style.display = 'block'; 
-            console.log(antonymSlot); 
+            antonymCircleNumber.style.display = 'block';  
         }
        
         w.forEach(element => {
-            
-        showDefinitions(element);
+            showDefinitions(element);
         });
 
         x.forEach(element => {
-            
             showExamples(element);
-            });
+        });
 
         y.forEach(element => {
-            
             showSynonyms(element);
-            });
+        });
 
         z.forEach(element => {
-            
             showAntonyms(element);
-            });
+        });
     
 
     }

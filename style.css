@@ -68,9 +68,11 @@ body{
     border: 2px solid #16C4EA ;
 }
 
-#header > input:nth-child(3):hover~ #search, #header > input:nth-child(3):focus~ #search {
+#header > input:nth-child(3):hover~ #search, #header > input:nth-child(3):focus~ #search, #search:hover, #search:focus {
     background-color: #16C4EA;
 }
+
+
 
 #search{
     width: 35px;
