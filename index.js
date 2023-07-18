@@ -1,5 +1,5 @@
 const def = document.querySelectorAll('#definition > .flex > p');
-const example = document.querySelectorAll('#examples > .flex > p');
+const exemple = document.querySelectorAll('#examples > .flex > p');
 const synonym = document.querySelectorAll('#synonyms > .flexRow > .flex > p');
 const antonym = document.querySelectorAll('#antonyms > .flexRow > .flex > p');
 
@@ -89,7 +89,7 @@ function searchButton(){
     hideCircle(antonymCircle);
 
     clear(def);
-    clear(example);
+    clear(exemple);
     clear(synonym);
     clear(antonym);
 
@@ -107,8 +107,65 @@ function searchButton(){
     partOfSpeech.textContent = data[0].meanings[0].partOfSpeech; 
      
     let tableauDef = data[0].meanings[0].definitions; 
-    let tableauExample = data[0].meanings[0].definitions.example; 
+    let tableauExample = findExample(data[0].meanings[0].definitions); 
+    let tableauSynonym = findSynonyms(data[0].meanings[0].definitions); 
+    let tableauAntonym = findAntonyms(data[0].meanings[0].definitions); 
+    
+    function findExample(i){      // trouve tous les exemples dans les .definitions sans afficher les vides // 
+        var examplesResult = [];    
+        i.forEach(element => {
+            if(element.example != undefined ){
+                examplesResult.push(element.example);
+            }
+        });
+
+        return examplesResult; 
+        
+    }
+
+     
+
+    // pour les synonyms// synonymResult.push(element.synonyms);
+
+    function findSynonyms(i){      // trouve tous les exemples dans les .definitions sans afficher les vides // 
+        var synonymResult = [];    
+        i.forEach(element => {
+            if(element.synonyms != "" ){
+
+                element.synonyms.forEach(sousElement => {
+                    synonymResult.push(sousElement);
+                });
+                
+            }
+        });
+
+        return synonymResult; 
+    }
+
+    function findAntonyms(i){      // trouve tous les exemples dans les .definitions sans afficher les vides // 
+        var antonymResult = [];    
+        i.forEach(element => {
+            if(element.antonyms != "" ){
+
+                element.antonyms.forEach(sousElement => {
+                    antonymResult.push(sousElement);
+                });
+                
+            }
+        });
+
+        return antonymResult; 
+    }
+
+    
+    findExample(data[0].meanings[0].definitions); 
+    findSynonyms(data[0].meanings[0].definitions);
+    findAntonyms(data[0].meanings[0].definitions);  
+
+    
     console.log(tableauExample); 
+    console.log(tableauSynonym); 
+    console.log(tableauAntonym); 
 
     
     console.log(data[0].meanings[0].definitions.synonyms)
@@ -122,18 +179,14 @@ function searchButton(){
             let defNumber = eval('data[0].meanings[0].definitions['+ a +'].definition');
             let defCircleNumber = eval('defCircle[' + a + ']'); 
 
-            let exampleSlot = eval('example[' + a + ']'); 
-            let exampleNumber = eval('data[0].meanings[0].definitions['+ a +'].example')
-            let exampleCircleNumber = eval('exampleCircle[' + a + ']');
-
             defSlot.textContent = "";
-            exampleSlot.textContent = ""; 
-            
             addInfo(defSlot, defNumber);
-            addInfo(exampleSlot, exampleNumber);
-
             defCircleNumber.style.display = 'block'; 
-            exampleCircleNumber.style.display = 'block'; 
+
+            
+
+            
+           
 
             console.log(defSlot); 
          
