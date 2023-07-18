@@ -1,5 +1,14 @@
 const def = document.querySelectorAll('#definition > .flex > p');
+const example = document.querySelectorAll('#examples > .flex > p');
+const synonym = document.querySelectorAll('#synonyms > .flexRow > .flex > p');
+const antonym = document.querySelectorAll('#antonyms > .flexRow > .flex > p');
+
 const defCircle = document.querySelectorAll('#definition > .flex > .blackcircle');
+const exampleCircle = document.querySelectorAll('#examples > .flex > .blackcircle');
+const synonymCircle = document.querySelectorAll('#synonyms > .flexRow > .flex > .blackcircle');
+const antonymCircle = document.querySelectorAll('#antonyms > .flexRow > .flex > .blackcircle');
+
+
 const word = document.querySelector('#mot > p:nth-child(1)'); 
 const phonetics = document.querySelector('#mot > p:nth-child(2)');
 const partOfSpeech = document.querySelector('#mot > p:nth-child(3)');
@@ -13,7 +22,6 @@ synonyms.style.display = 'none';
 antonyms.style.display = 'none'; 
 
 value_1.checked = true;
-
 
 
 
@@ -58,6 +66,10 @@ function hideCircle(i){ // sert à cacher les points noirs si il n'y a pas de de
     })
 }
 
+function clear (i){
+    i.forEach(element => {
+        element.textContent= ""; 
+})}
 
 
 function searchButton(){
@@ -71,6 +83,16 @@ function searchButton(){
     blackline.hidden =false; 
     var url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + searchBar.value;
 
+    hideCircle(defCircle);
+    hideCircle(exampleCircle);
+    hideCircle(synonymCircle);
+    hideCircle(antonymCircle);
+
+    clear(def);
+    clear(example);
+    clear(synonym);
+    clear(antonym);
+
     fetch(url)
   .then(response => {
     // Gérer la réponse du serveur
@@ -83,28 +105,35 @@ function searchButton(){
     word.textContent= data[0].word; 
     phonetics.textContent = data[0].phonetic; 
     partOfSpeech.textContent = data[0].meanings[0].partOfSpeech; 
-    hideCircle(defCircle); 
+     
     let tableauDef = data[0].meanings[0].definitions; 
-    console.log(data[0].meanings[0].definitions.length); 
+    let tableauExample = data[0].meanings[0].definitions.example; 
+    console.log(tableauExample); 
+
+    
+    console.log(data[0].meanings[0].definitions.synonyms)
+    console.log(data[0].meanings[0].definitions); 
+    console.log(data[0].meanings[0].definitions.example); 
 
     function retrieve(i){
-        function clear (i){
-            i.forEach(element => {
-            
-                element.textContent= ""; 
-        })}
 
-        clear(def);
-        function tkt1(a){
+        function showQuery(a){
             let defSlot = eval('def[' + a + ']');
             let defNumber = eval('data[0].meanings[0].definitions['+ a +'].definition');
             let defCircleNumber = eval('defCircle[' + a + ']'); 
 
+            let exampleSlot = eval('example[' + a + ']'); 
+            let exampleNumber = eval('data[0].meanings[0].definitions['+ a +'].example')
+            let exampleCircleNumber = eval('exampleCircle[' + a + ']');
+
             defSlot.textContent = "";
+            exampleSlot.textContent = ""; 
             
             addInfo(defSlot, defNumber);
+            addInfo(exampleSlot, exampleNumber);
 
             defCircleNumber.style.display = 'block'; 
+            exampleCircleNumber.style.display = 'block'; 
 
             console.log(defSlot); 
          
@@ -112,9 +141,10 @@ function searchButton(){
        
         i.forEach(element => {
             
-        tkt1(element);
+        showQuery(element);
         })
     }
+
     retrieve(convertElementInNumber(tableauDef)); 
     
   })
