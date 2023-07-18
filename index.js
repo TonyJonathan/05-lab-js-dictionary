@@ -123,12 +123,10 @@ function searchButton(){
         
     }
 
-     
+    // pour les synonyms// 
 
-    // pour les synonyms// synonymResult.push(element.synonyms);
-
-    function findSynonyms(i){      // trouve tous les exemples dans les .definitions sans afficher les vides // 
-        var synonymResult = [];    
+    function findSynonyms(i){      
+        let synonymResult = [];    
         i.forEach(element => {
             if(element.synonyms != "" ){
 
@@ -142,8 +140,8 @@ function searchButton(){
         return synonymResult; 
     }
 
-    function findAntonyms(i){      // trouve tous les exemples dans les .definitions sans afficher les vides // 
-        var antonymResult = [];    
+    function findAntonyms(i){     
+        let antonymResult = [];    
         i.forEach(element => {
             if(element.antonyms != "" ){
 
@@ -166,15 +164,12 @@ function searchButton(){
     console.log(tableauExample); 
     console.log(tableauSynonym); 
     console.log(tableauAntonym); 
-
-    
-    console.log(data[0].meanings[0].definitions.synonyms)
     console.log(data[0].meanings[0].definitions); 
-    console.log(data[0].meanings[0].definitions.example); 
 
-    function retrieve(i){
 
-        function showQuery(a){
+    function retrieve(w, x, y, z){
+
+        function showDefinitions(a){
             let defSlot = eval('def[' + a + ']');
             let defNumber = eval('data[0].meanings[0].definitions['+ a +'].definition');
             let defCircleNumber = eval('defCircle[' + a + ']'); 
@@ -182,23 +177,66 @@ function searchButton(){
             defSlot.textContent = "";
             addInfo(defSlot, defNumber);
             defCircleNumber.style.display = 'block'; 
-
-            
-
-            
-           
-
             console.log(defSlot); 
-         
+        }
+
+        function showExamples(a){
+            let exampleSlot = eval('exemple[' + a + ']');
+            let exampleNumber = eval('tableauExample['+ a +']');
+            let exampleCircleNumber = eval('exampleCircle[' + a + ']'); 
+
+            exampleSlot.textContent = "";
+            addInfo(exampleSlot, exampleNumber);
+            exampleCircleNumber.style.display = 'block'; 
+            console.log(exampleSlot); 
+        }
+
+        function showSynonyms(a){
+            let synonymSlot = eval('synonym[' + a + ']');
+            let synonymNumber = eval('tableauSynonym['+ a +']');
+            let synonymCircleNumber = eval('synonymCircle[' + a + ']'); 
+
+            synonymSlot.textContent = "";
+            addInfo(synonymSlot, synonymNumber);
+            synonymCircleNumber.style.display = 'block'; 
+            console.log(synonymSlot); 
+        }
+
+        function showAntonyms(a){
+            let antonymSlot = eval('antonym[' + a + ']');
+            let antonymNumber = eval('tableauAntonym['+ a +']');
+            let antonymCircleNumber = eval('antonymCircle[' + a + ']'); 
+
+            antonymSlot.textContent = "";
+            addInfo(antonymSlot, antonymNumber);
+            antonymCircleNumber.style.display = 'block'; 
+            console.log(antonymSlot); 
         }
        
-        i.forEach(element => {
+        w.forEach(element => {
             
-        showQuery(element);
-        })
+        showDefinitions(element);
+        });
+
+        x.forEach(element => {
+            
+            showExamples(element);
+            });
+
+        y.forEach(element => {
+            
+            showSynonyms(element);
+            });
+
+        z.forEach(element => {
+            
+            showAntonyms(element);
+            });
+    
+
     }
 
-    retrieve(convertElementInNumber(tableauDef)); 
+    retrieve(convertElementInNumber(tableauDef), convertElementInNumber(tableauExample), convertElementInNumber(tableauSynonym), convertElementInNumber(tableauAntonym)); 
     
   })
    
@@ -261,7 +299,7 @@ function change(){
 
                 antonyms.style.display = 'block'; 
             }
-            console.log('hihi'); 
+           
         }
         }
         

@@ -227,7 +227,7 @@ input:checked +label{
 }
 
 .blackcircle{
-    width: 15px;
+    min-width: 15px;
     height: 15px;
     background-color: #2B2B2B;
     border-radius: 11px;
