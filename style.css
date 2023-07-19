@@ -16,28 +16,40 @@ body{
 
 #header{
     width: 1440px;
-    display: flex;
+    display: grid;
+    grid-template-rows: 141px;
+    grid-template-columns: 1440px;
 }
 
-#logo{
-    display: grid;
+#header > img:nth-child(1), .rectangle, #circle, #header > input:nth-child(3), #search, #header > p:nth-child(5),#header > img:nth-child(6){
+    grid-column-start: 1;
+    grid-row-start: 1;
 }
+
 
 #header > img:nth-child(1){
     margin-top: 65px;
     margin-left: 41px;
+    z-index: 1;
 }
 
-#rectangle{
+#header > img:nth-child(6){
+    margin-top: 57px;
+    margin-left: 41px;
+    
+    
+}
+
+.rectangle{
     width: 46px;
     max-height: 22px;
     margin-top: 80px;
-    margin-left: 100px;
+    margin-left: 405px; /*405*/
     background-color: #000;
-    border-radius: 11px;
+    border-radius: 13px;
 }
 
-#rectangle:hover{
+.rectangle:hover{
     background-color: #707070;
     cursor: pointer;
 }
@@ -60,15 +72,15 @@ body{
     border: 2px solid #43A2B7;
     margin-top: 72px;
     margin-bottom: 29px;
-    margin-left: 30px;
+    margin-left: 478px; /*478*/
     outline: none;
 }
 
-#header > input:nth-child(3):hover, #header > input:nth-child(3):focus {
+#header > input:nth-child(3):hover, #header > input:nth-child(3):focus{
     border: 2px solid #16C4EA ;
 }
 
-#header > input:nth-child(3):hover~ #search, #header > input:nth-child(3):focus~ #search, #search:hover, #search:focus {
+#header > input:nth-child(3):hover~ #search, #header > input:nth-child(3):focus~ #search {
     background-color: #16C4EA;
 }
 
@@ -83,6 +95,7 @@ body{
     padding-left: 14px;
     margin-top: 72px;
     margin-bottom: 29px;
+    margin-left: 839px; /*772*/
 }
 
 #header > p:nth-child(5){
@@ -93,7 +106,7 @@ body{
     line-height: 27px;
     margin: 0;
     margin-top: 78px;
-    margin-left: 113px;
+    margin-left: 1005px; /*1005*/
 }
 
 .onglet{
@@ -123,7 +136,7 @@ body{
     margin-left: 43px;
 }
 
-#line{
+.line{
     width: 1150px;
     background-color: #16C4EA;
     height: 2px;
@@ -267,7 +280,46 @@ input:checked +label{
    color: #2B2B2B;
 }
 
-#definition , #examples, #synonyms, #antonyms, #mot, #blackline{
+/* mode sombre */
 
+.blackContainer{
+    background-color: #363636;
+    min-height: 100vh;
+}
+
+.darkRectangle{
+    background-color: #b74f4f;
+}
+
+.darkRectangle:hover{
+    background-color: #bb3485;
+    cursor: pointer;
+}
+
+.darkCircle{
+    background-color: #000;
+}
+
+.darkLabel{
+    opacity: 1;
+}
+
+.darkLabel:hover{
+    background-color: #3EC4E1;
+    opacity: 1;
+} 
+
+input:checked + .darkLabel{
+    opacity: 1;
+    background-color: #108AE2;
+}
+
+.darkLine{
+    background-color: #43A2B7;
+    
+}
+
+.clearLogo{
+    display: none;
 }
 

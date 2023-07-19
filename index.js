@@ -14,6 +14,19 @@ const phonetics = document.querySelector('#mot > p:nth-child(2)');
 const partOfSpeech = document.querySelector('#mot > p:nth-child(3)');
 
 
+const container = document.querySelector('.container');
+const logo = document.querySelector('#header > img:nth-child(1)');
+const darkLogo = document.querySelector('#header > img:nth-child(6)');
+const rectangle = document.querySelector('.rectangle'); 
+const label1 = document.querySelector('label'); 
+const label2 = document.querySelector('#buttonRow > .button:nth-child(2) > label'); 
+const label3 = document.querySelector('#buttonRow > .button:nth-child(3) > label'); 
+const label4 = document.querySelector('#buttonRow > .button:nth-child(4) > label'); 
+const line = document.querySelector('.line'); 
+
+
+
+
 mot.style.display = 'none'; 
 blackline.hidden =true; 
 definition.style.display = 'none'; 
@@ -302,10 +315,28 @@ buttonRow.addEventListener('click', change);
 
 
 
+function darkMode() {
+
+    container.classList.toggle('blackContainer'); 
+    rectangle.classList.toggle('darkRectangle'); 
+    label1.classList.toggle('darkLabel'); 
+    label2.classList.toggle('darkLabel'); 
+    label3.classList.toggle('darkLabel'); 
+    label4.classList.toggle('darkLabel'); 
+    line.classList.toggle('darkLine'); 
+    logo.classList.toggle('clearLogo');
+    darkLogo.classList.toggle('darkLogo');
 
 
+    
+   
+
+    
+    
+}
 
 
+rectangle.addEventListener('click', darkMode); 
  
 
 
