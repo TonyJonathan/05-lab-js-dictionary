@@ -18,12 +18,22 @@ const container = document.querySelector('.container');
 const logo = document.querySelector('#header > img:nth-child(1)');
 const darkLogo = document.querySelector('#header > img:nth-child(6)');
 const rectangle = document.querySelector('.rectangle'); 
+const searchBar = document.querySelector('.inputValid');
+const searchWen = document.querySelector('.search');
+const slogan = document.querySelector('#header > p:nth-child(5)');
+
 const label1 = document.querySelector('label'); 
 const label2 = document.querySelector('#buttonRow > .button:nth-child(2) > label'); 
 const label3 = document.querySelector('#buttonRow > .button:nth-child(3) > label'); 
 const label4 = document.querySelector('#buttonRow > .button:nth-child(4) > label'); 
 const line = document.querySelector('.line'); 
+const darkWord = document.querySelector('#mot > p:nth-child(1)');
+const darkBullet = document.querySelectorAll('.blackcircle, #blackline'); 
+const darkResponse = document.querySelectorAll('.text, .textTitle');
 
+
+const soundLogo = document.querySelector('#mot > img:nth-child(4)');
+const darkSoundLogo = document.querySelector('#mot > img:nth-child(5)');
 
 
 
@@ -270,7 +280,7 @@ function searchButton(){
 
 }
 
-search.addEventListener('click', searchButton); 
+searchWen.addEventListener('click', searchButton); 
 
 
 function change(){
@@ -309,16 +319,33 @@ function change(){
         
     }
 
-
-
 buttonRow.addEventListener('click', change); 
 
-
+function darkModeImg(){
+    if(rectangle.classList.value == 'rectangle'){
+        soundLogo.style.display = 'block';
+        darkSoundLogo.style.display = 'none';
+        darkBullet.forEach(element =>{
+            element.style.backgroundColor = '#2B2B2B';
+        })
+        
+    } else {
+        soundLogo.style.display = 'none';
+        darkSoundLogo.style.display = 'block';
+        
+        darkBullet.forEach(element =>{
+            element.style.backgroundColor = '#E3E3E3';
+        })
+    
+        
+    }
+}
 
 function darkMode() {
 
     container.classList.toggle('blackContainer'); 
     rectangle.classList.toggle('darkRectangle'); 
+    slogan.classList.toggle('darkSlogan');
     label1.classList.toggle('darkLabel'); 
     label2.classList.toggle('darkLabel'); 
     label3.classList.toggle('darkLabel'); 
@@ -326,23 +353,26 @@ function darkMode() {
     line.classList.toggle('darkLine'); 
     logo.classList.toggle('clearLogo');
     darkLogo.classList.toggle('darkLogo');
+    searchBar.classList.toggle('darkSearchBar'); 
+    searchWen.classList.toggle('darkSearch'); 
+    darkWord.classList.toggle('darkWord'); 
 
+    console.log(rectangle.classList.value); 
+
+    darkResponse.forEach(element =>{
+        element.classList.toggle('darkText'); 
+    })
 
     
-   
-
     
-    
+    darkModeImg();
 }
 
 
 rectangle.addEventListener('click', darkMode); 
- 
-
 
 
  
-
 
 
 
