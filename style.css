@@ -178,6 +178,7 @@ label:hover{
     background-color: #43A2B7;
     opacity: 0.5;
     cursor: pointer;
+    transition: color 0s;
 } 
 
 input:checked +label{
@@ -305,6 +306,12 @@ input:checked +label{
     line-height: 34px;  
 }
 
+.flexRow > .flex > p:hover{
+    cursor: pointer;
+    color: #16C4EA;
+    transition-delay: -1s;
+}
+
 /* mode sombre */
 
 .container{
@@ -341,12 +348,13 @@ input:checked +label{
 .darkLabel:hover{
     background-color: #3EC4E1;
     opacity: 1;
+
 } 
 
 input:checked + .darkLabel{
     opacity: 1;
     background-color: #108AE2;
-    transition: background-color 1s;
+    transition: background-color 0s;
 }
 
 .darkLine{
@@ -383,7 +391,10 @@ input:checked + .darkLabel{
     transition: color 1s;
 }
 
+
 .darkWord{
     color: #FFF;
     transition: color 1s;
 }
+
+

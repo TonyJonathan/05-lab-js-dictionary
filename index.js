@@ -3,6 +3,7 @@ const exemple = document.querySelectorAll('#examples > .flex > p');
 const synonym = document.querySelectorAll('#synonyms > .flexRow > .flex > p');
 const antonym = document.querySelectorAll('#antonyms > .flexRow > .flex > p');
 const errorMessage = document.querySelector('#header > p:nth-child(7)'); 
+const synonymsAndAntonyms = document.querySelectorAll('#synonyms > .flexRow > .flex > p, #antonyms > .flexRow > .flex > p')
 
 const defCircle = document.querySelectorAll('#definition > .flex > .blackcircle');
 const exampleCircle = document.querySelectorAll('#examples > .flex > .blackcircle');
@@ -392,3 +393,25 @@ document.addEventListener('keydown', (event) =>{
         searchButton();
     }
 });
+
+// en cours // 
+
+function synonymsAndAntonymsClickables(){
+
+  
+    synonymsAndAntonyms.forEach(element =>{
+        if(element.textContent !== ""){
+         element.addEventListener('click', )
+        }
+    });
+
+    console.log(synonymsAndAntonymsText);
+}
+
+word.addEventListener('click', synonymsAndAntonymsClickables); 
+
+
+function addWordToSearchButton {
+    searchBar.textContent = element.textContent;
+    searchButton();
+}
