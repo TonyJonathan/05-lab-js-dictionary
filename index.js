@@ -387,3 +387,8 @@ function eraseErrorMessage(){
 
 searchBar.addEventListener('input', eraseErrorMessage); 
 
+document.addEventListener('keydown', (event) =>{
+    if(event.key === 'Enter') {
+        searchButton();
+    }
+});
