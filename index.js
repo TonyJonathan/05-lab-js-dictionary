@@ -1,8 +1,8 @@
 const def = document.querySelectorAll('#definition > .flex > p');
-const firstDef = document.querySelector('#definition > .flex > p:first-child')
 const exemple = document.querySelectorAll('#examples > .flex > p');
 const synonym = document.querySelectorAll('#synonyms > .flexRow > .flex > p');
 const antonym = document.querySelectorAll('#antonyms > .flexRow > .flex > p');
+const errorMessage = document.querySelector('#header > p:nth-child(7)'); 
 
 const defCircle = document.querySelectorAll('#definition > .flex > .blackcircle');
 const exampleCircle = document.querySelectorAll('#examples > .flex > .blackcircle');
@@ -13,7 +13,6 @@ const antonymCircle = document.querySelectorAll('#antonyms > .flexRow > .flex > 
 const word = document.querySelector('#mot > p:nth-child(1)'); 
 const phonetics = document.querySelector('#mot > p:nth-child(2)');
 const partOfSpeech = document.querySelector('#mot > p:nth-child(3)');
-console.dir(firstDef);
 
 const container = document.querySelector('.container');
 const logo = document.querySelector('#header > img:nth-child(1)');
@@ -34,6 +33,10 @@ const darkResponse = document.querySelectorAll('.text, .textTitle');
 
 const soundLogo = document.querySelector('#mot > img:nth-child(4)');
 const darkSoundLogo = document.querySelector('#mot > img:nth-child(5)');
+
+
+const firstDef = document.querySelector('#definition > .flex > p:nth-child(2)')
+
 
 mot.style.display = 'none'; 
 blackline.hidden =true; 
@@ -97,8 +100,7 @@ function searchButton(){
     examples.style.display = 'none'; 
     synonyms.style.display = 'none'; 
     antonyms.style.display = 'none'; 
-    mot.style.display = 'flex'; 
-    blackline.hidden =false; 
+     
     var url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + searchBar.value;
 
     hideCircle(defCircle);
@@ -114,17 +116,23 @@ function searchButton(){
     fetch(url)
   .then(response => {
     // Gérer la réponse du serveur
+    if(!response.ok){
+        errorMessage.textContent = 'Your word is unvalid, please try again'; 
+        mot.style.display = 'none'; 
+        blackline.hidden =true;
+    } 
+
+    
     if (response.ok) {
+        mot.style.display = 'flex'; 
+        blackline.hidden =false;
+        errorMessage.textContent = ''; 
       return response.json(); // Convertir la réponse en JSON
     } 
   })
   .then(data => {
-    if(typeof(typeof(def[1])) !== 'object'){
-        console.log('lllll');
-    }
 
-    
-    console.dir(typeof(def[1].innerHTML));
+   
 
     word.textContent= data[0].word; 
     phonetics.textContent = data[0].phonetic; 
@@ -251,8 +259,10 @@ function searchButton(){
     }
 
     retrieve(convertElementInNumber(tableauDef), convertElementInNumber(tableauExample), convertElementInNumber(tableauSynonym), convertElementInNumber(tableauAntonym)); 
-    
+
   })
+
+
 
     if(value_1.checked == true){
 
@@ -274,6 +284,8 @@ function searchButton(){
         antonyms.style.display = 'block'; 
     }
    
+} else {
+    errorMessage.textContent = "Enter a word please"
 }
 
 }
@@ -355,6 +367,8 @@ function darkMode() {
     darkWord.classList.toggle('darkWord'); 
 
     console.log(rectangle.classList.value); 
+    
+
 
     darkResponse.forEach(element =>{
         element.classList.toggle('darkText'); 
@@ -367,7 +381,9 @@ function darkMode() {
 rectangle.addEventListener('click', darkMode); 
 
 
- 
+function eraseErrorMessage(){
+    errorMessage.textContent = "";
+}
 
-
+searchBar.addEventListener('input', eraseErrorMessage); 
 

@@ -21,7 +21,7 @@ body{
     grid-template-columns: 1440px;
 }
 
-#header > img:nth-child(1), .rectangle, #circle, #header > input:nth-child(3), .search, #header > p:nth-child(5),#header > img:nth-child(6){
+#header > img:nth-child(1), .rectangle, #circle, #header > input:nth-child(3), .search, #header > p:nth-child(5),#header > img:nth-child(6), #header > p:nth-child(7){
     grid-column-start: 1;
     grid-row-start: 1;
 }
@@ -90,7 +90,7 @@ body{
     padding-left: 14px;
     margin-top: 72px;
     margin-bottom: 29px;
-    margin-left: 839px; /*772*/
+    margin-left: 836px; /*772*/
 }
 
 .slogan{
@@ -102,6 +102,15 @@ body{
     margin: 0;
     margin-top: 78px;
     margin-left: 1005px; /*1005*/
+}
+
+#header > p:nth-child(7){
+    color: #ff1c1c;
+    margin: 0;
+    margin-left: 510px;
+    margin-top: 118px;
+    font-size: 16px;
+    z-index: 1;
 }
 
 .onglet{
