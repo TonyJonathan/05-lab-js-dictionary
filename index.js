@@ -1,4 +1,5 @@
 const def = document.querySelectorAll('#definition > .flex > p');
+const firstDef = document.querySelector('#definition > .flex > p:first-child')
 const exemple = document.querySelectorAll('#examples > .flex > p');
 const synonym = document.querySelectorAll('#synonyms > .flexRow > .flex > p');
 const antonym = document.querySelectorAll('#antonyms > .flexRow > .flex > p');
@@ -12,7 +13,7 @@ const antonymCircle = document.querySelectorAll('#antonyms > .flexRow > .flex > 
 const word = document.querySelector('#mot > p:nth-child(1)'); 
 const phonetics = document.querySelector('#mot > p:nth-child(2)');
 const partOfSpeech = document.querySelector('#mot > p:nth-child(3)');
-
+console.dir(firstDef);
 
 const container = document.querySelector('.container');
 const logo = document.querySelector('#header > img:nth-child(1)');
@@ -31,11 +32,8 @@ const darkWord = document.querySelector('#mot > p:nth-child(1)');
 const darkBullet = document.querySelectorAll('.blackcircle, #blackline'); 
 const darkResponse = document.querySelectorAll('.text, .textTitle');
 
-
 const soundLogo = document.querySelector('#mot > img:nth-child(4)');
 const darkSoundLogo = document.querySelector('#mot > img:nth-child(5)');
-
-
 
 mot.style.display = 'none'; 
 blackline.hidden =true; 
@@ -45,9 +43,6 @@ synonyms.style.display = 'none';
 antonyms.style.display = 'none'; 
 
 value_1.checked = true;
-
-
-
 
 function addInfo(a, b){ // sert a ajouter les definition-exemples... si il y'en a sinon affiche ""// 
     
@@ -59,6 +54,8 @@ function addInfo(a, b){ // sert a ajouter les definition-exemples... si il y'en 
         return a;
     }
  }
+
+ 
 
  function convertElementInNumber(i){ // sert à savoir le nombre de définitions-exemples... pour pouvoir ajouter les ajouter// 
     if(i.length == 1){
@@ -82,7 +79,6 @@ function addInfo(a, b){ // sert a ajouter les definition-exemples... si il y'en 
     return i;
 }
 
-
 function hideCircle(i){ // sert à cacher les points noirs si il n'y a pas de def-ex-anto-syn à coté// 
     i.forEach(element =>{
         element.style.display = "none";
@@ -93,7 +89,6 @@ function clear (i){
     i.forEach(element => {
         element.textContent= ""; 
 })}
-
 
 function searchButton(){
     if(searchBar.value != ""){
@@ -124,6 +119,12 @@ function searchButton(){
     } 
   })
   .then(data => {
+    if(typeof(typeof(def[1])) !== 'object'){
+        console.log('lllll');
+    }
+
+    
+    console.dir(typeof(def[1].innerHTML));
 
     word.textContent= data[0].word; 
     phonetics.textContent = data[0].phonetic; 
@@ -247,13 +248,11 @@ function searchButton(){
             showAntonyms(element);
         });
     
-
     }
 
     retrieve(convertElementInNumber(tableauDef), convertElementInNumber(tableauExample), convertElementInNumber(tableauSynonym), convertElementInNumber(tableauAntonym)); 
     
   })
-   
 
     if(value_1.checked == true){
 
@@ -275,7 +274,6 @@ function searchButton(){
         antonyms.style.display = 'block'; 
     }
    
-
 }
 
 }
@@ -287,7 +285,6 @@ function change(){
     if(value_1.checked == true || value_2.checked == true || value_3.checked == true || value_4.checked == true){
         if(mot.style.display == 'flex'){
 
-        
             definition.style.display = 'none'; 
             examples.style.display = 'none'; 
             synonyms.style.display = 'none'; 
@@ -363,8 +360,6 @@ function darkMode() {
         element.classList.toggle('darkText'); 
     })
 
-    
-    
     darkModeImg();
 }
 

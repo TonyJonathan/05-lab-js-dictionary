@@ -26,7 +26,6 @@ body{
     grid-row-start: 1;
 }
 
-
 #header > img:nth-child(1){
     margin-top: 65px;
     margin-left: 41px;
@@ -36,8 +35,6 @@ body{
 #header > img:nth-child(6){
     margin-top: 57px;
     margin-left: 41px;
-    
-    
 }
 
 .rectangle{
@@ -83,8 +80,6 @@ body{
 .inputValid:hover~ .search, #header > .inputValid:focus~ .search {
     background-color: #16C4EA;
 }
-
-
 
 .search{
     width: 35px;
@@ -141,6 +136,7 @@ body{
     background-color: #16C4EA;
     height: 2px;
     margin-left: 27px;
+    transition: background-color 1s;
 }
 
 #buttonRow{
@@ -162,6 +158,7 @@ label{
     text-align: center;
     border-radius: 25px 25px 0px 0px;
     margin: 0;
+    transition: opacity 1s;
 }
 
 #buttonRow > .button:last-child > label{
@@ -172,12 +169,12 @@ label:hover{
     background-color: #43A2B7;
     opacity: 0.5;
     cursor: pointer;
-    
 } 
 
 input:checked +label{
     opacity: 1;
     background-color: #43A2B7;
+    transition: background-color 1s;
 }
 
 .button > input {
@@ -223,15 +220,14 @@ input:checked +label{
 
 .textTitle{
     color: #5e5e5e;
+    transition: color 1s;
 }
 
 #mot > img:nth-child(4){
     margin-top: 75px;
     margin-left: 29px;
-    border: 2px solid #FFF;
+    border: 2px solid rgba(255, 255, 255, 0);
 }
-
-
 
 #mot > img:nth-child(4):hover{
     border: 2px solid #16C4EA;
@@ -241,7 +237,7 @@ input:checked +label{
 #mot > img:nth-child(5){
     margin-top: 75px;
     margin-left: 29px;
-    border: 2px solid #363636;
+    border: 2px solid rgba(255, 255, 255, 0);
 }
 
 #mot > img:nth-child(5):hover{
@@ -255,6 +251,7 @@ input:checked +label{
     height: 1px;
     margin-left: 59px;
     margin-bottom: 59px;
+    transition: background-color 1s;
 }
 
 .blackcircle{
@@ -262,6 +259,7 @@ input:checked +label{
     height: 15px;
     background-color: #2B2B2B;
     border-radius: 11px;
+    transition: background-color 1s;
 }
 
 .flex{
@@ -281,6 +279,7 @@ input:checked +label{
 
 .text{
     color: #2B2B2B;
+    transition: color 1s;
 }
 
 .flexRow{
@@ -288,21 +287,21 @@ input:checked +label{
     margin-bottom: 60px;
 }
 
-
 .flexRow > .flex{
     width: 220px;
 }
 
 .flexRow > .flex > p{
     font-size: 24px;
-    line-height: 34px;
-   
+    line-height: 34px;  
 }
 
 /* mode sombre */
 
 .container{
     min-height: 100vh;
+    background-color: #fff;
+    transition: background-color 1s;
 }
 
 .blackContainer{
@@ -327,6 +326,7 @@ input:checked +label{
 
 .darkLabel{
     opacity: 1;
+    transition: opacity 1s;
 }
 
 .darkLabel:hover{
@@ -337,10 +337,12 @@ input:checked +label{
 input:checked + .darkLabel{
     opacity: 1;
     background-color: #108AE2;
+    transition: background-color 1s;
 }
 
 .darkLine{
     background-color: #43A2B7;
+    transition: background-color 1s;
 }
 
 .clearLogo{
@@ -349,24 +351,30 @@ input:checked + .darkLabel{
 
 .darkSearchBar {
     border: 2px solid #108AE2;
+    transition: border-color 1s;
 }
 
 .darkSearch{
     background-color: #108AE2;
+    transition: background-color 1s;
 }
 
 .darkSlogan{
     color: #108AE2;
+    transition: color 1s;
 }
 
 .darkBullet{
     background-color: #e4e4e4;
+    transition: background-color 1s;
 }
 
 .darkText{
     color: #E3E3E3;
+    transition: color 1s;
 }
 
 .darkWord{
     color: #FFF;
+    transition: color 1s;
 }
