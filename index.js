@@ -396,22 +396,22 @@ document.addEventListener('keydown', (event) =>{
 
 // en cours // 
 
-function synonymsAndAntonymsClickables(){
+  
+  document.addEventListener('click', () => {
+    
+    synonymsAndAntonyms.forEach(element => {
+      
+        element.addEventListener('click', () => {
+          // Code à exécuter lorsque vous cliquez sur l'élément
+          searchBar.value = element.textContent;
+          searchButton();
+          label1.click(); 
+          
+
+        });
+      
+    });
+    
+  });
 
   
-    synonymsAndAntonyms.forEach(element =>{
-        if(element.textContent !== ""){
-         element.addEventListener('click', )
-        }
-    });
-
-    console.log(synonymsAndAntonymsText);
-}
-
-word.addEventListener('click', synonymsAndAntonymsClickables); 
-
-
-function addWordToSearchButton {
-    searchBar.textContent = element.textContent;
-    searchButton();
-}
