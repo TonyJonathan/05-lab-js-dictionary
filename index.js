@@ -14,6 +14,9 @@ const antonymCircle = document.querySelectorAll('#antonyms > .flexRow > .flex > 
 const word = document.querySelector('#mot > p:nth-child(1)'); 
 const phonetics = document.querySelector('#mot > p:nth-child(2)');
 const partOfSpeech = document.querySelector('#mot > p:nth-child(3)');
+const lienAudio = document.querySelector('#header > p:nth-child(8)');
+
+
 
 const container = document.querySelector('.container');
 const logo = document.querySelector('#header > img:nth-child(1)');
@@ -35,8 +38,9 @@ const darkResponse = document.querySelectorAll('.text, .textTitle');
 const soundLogo = document.querySelector('#mot > img:nth-child(4)');
 const darkSoundLogo = document.querySelector('#mot > img:nth-child(5)');
 
-
 const firstDef = document.querySelector('#definition > .flex > p:nth-child(2)')
+
+
 
 
 mot.style.display = 'none'; 
@@ -57,11 +61,12 @@ function addInfo(a, b){ // sert a ajouter les definition-exemples... si il y'en 
         a.textContent = ""; 
         return a;
     }
- }
+}
 
  
 
- function convertElementInNumber(i){ // sert à savoir le nombre de définitions-exemples... pour pouvoir ajouter les ajouter// 
+function convertElementInNumber(i){ // sert à savoir le nombre de définitions-exemples... pour pouvoir ajouter les ajouter// 
+
     if(i.length == 1){
         i = [0]; 
     }else if(i.length == 2){
@@ -92,7 +97,8 @@ function hideCircle(i){ // sert à cacher les points noirs si il n'y a pas de de
 function clear (i){
     i.forEach(element => {
         element.textContent= ""; 
-})}
+    })
+}
 
 function searchButton(){
     if(searchBar.value != ""){
@@ -115,153 +121,182 @@ function searchButton(){
     clear(antonym);
 
     fetch(url)
-  .then(response => {
-    // Gérer la réponse du serveur
-    if(!response.ok){
-        errorMessage.textContent = 'Your word is unvalid, please try again'; 
-        mot.style.display = 'none'; 
-        blackline.hidden =true;
-    } 
+    .then(response => {
+        // Gérer la réponse du serveur
+        if(!response.ok){
+            errorMessage.textContent = 'Your word is unvalid, please try again'; 
+            mot.style.display = 'none'; 
+            blackline.hidden =true;
+        } 
 
-    
-    if (response.ok) {
-        mot.style.display = 'flex'; 
-        blackline.hidden =false;
-        errorMessage.textContent = ''; 
-      return response.json(); // Convertir la réponse en JSON
-    } 
-  })
-  .then(data => {
-
-   
-
-    word.textContent= data[0].word; 
-    phonetics.textContent = data[0].phonetic; 
-    partOfSpeech.textContent = data[0].meanings[0].partOfSpeech; 
-     
-    let tableauDef = data[0].meanings[0].definitions; 
-    let tableauExample = findExample(data[0].meanings[0].definitions); 
-    let tableauSynonym = findSynonyms(data[0].meanings[0].definitions); 
-    let tableauAntonym = findAntonyms(data[0].meanings[0].definitions); 
-
-    // trouve tous les exemples dans les .definitions sans afficher les vides //
-    
-    function findExample(i){       
-        var examplesResult = [];    
-        i.forEach(element => {
-            if(element.example != undefined ){
-                examplesResult.push(element.example);
-            }
-        });
-
-        return examplesResult; 
         
-    }
+        if (response.ok) {
+            mot.style.display = 'flex'; 
+            blackline.hidden =false;
+            errorMessage.textContent = ''; 
+            return response.json(); // Convertir la réponse en JSON
+        } 
+    })
 
-    // pour les synonymes// 
-
-    function findSynonyms(i){      
-        let synonymResult = [];    
-        i.forEach(element => {
-            if(element.synonyms != "" ){
-
-                element.synonyms.forEach(sousElement => {
-                    synonymResult.push(sousElement);
-                });
-                
-            }
-        });
-
-        return synonymResult; 
-    }
-
-    // pour les antonymes// 
-
-    function findAntonyms(i){     
-        let antonymResult = [];    
-        i.forEach(element => {
-            if(element.antonyms != "" ){
-
-                element.antonyms.forEach(sousElement => {
-                    antonymResult.push(sousElement);
-                });
-                
-            }
-        });
-
-        return antonymResult; 
-    }
-
-    findExample(data[0].meanings[0].definitions); 
-    findSynonyms(data[0].meanings[0].definitions);
-    findAntonyms(data[0].meanings[0].definitions);  
+    .then(data => {
+        
+        word.textContent= data[0].word; 
+        phonetics.textContent = data[0].phonetic; 
+        partOfSpeech.textContent = data[0].meanings[0].partOfSpeech; 
+        lienAudio.textContent = data[0].phonetics[0].audio; 
+        const lienAudioURL = lienAudio.textContent;
 
 
-    // la fonction retrieve est composée de sous-fonctions qui permettent d'aller rechercher dans la data de l'API les informations concernant les def-ex-syn-ant et de les ajouter au bon endroit en fonction de leurs nombres et de la fonction convertElementInNumber, elle permet aussi de transformer en "" les p qui ne sont pas concernés et leurs points. // 
+        const audioPlayer = new Audio();
 
-    function retrieve(w, x, y, z){
+audioPlayer.addEventListener('canplaythrough', () => {
+  // Le fichier audio est chargé et prêt à être lu
+  audioPlayer.play();
+});
 
-        function showDefinitions(a){
-            let defSlot = eval('def[' + a + ']');
-            let defNumber = eval('data[0].meanings[0].definitions['+ a +'].definition');
-            let defCircleNumber = eval('defCircle[' + a + ']'); 
+soundLogo.addEventListener('click', () => {
+    // Le fichier audio est chargé et prêt à être lu
+    audioPlayer.play();
+  });
 
-            defSlot.textContent = "";
-            addInfo(defSlot, defNumber);
-            defCircleNumber.style.display = 'block'; 
-        }
-
-        function showExamples(a){
-            let exampleSlot = eval('exemple[' + a + ']');
-            let exampleNumber = eval('tableauExample['+ a +']');
-            let exampleCircleNumber = eval('exampleCircle[' + a + ']'); 
-
-            exampleSlot.textContent = "";
-            addInfo(exampleSlot, exampleNumber);
-            exampleCircleNumber.style.display = 'block'; 
-        }
-
-        function showSynonyms(a){
-            let synonymSlot = eval('synonym[' + a + ']');
-            let synonymNumber = eval('tableauSynonym['+ a +']');
-            let synonymCircleNumber = eval('synonymCircle[' + a + ']'); 
-
-            synonymSlot.textContent = "";
-            addInfo(synonymSlot, synonymNumber);
-            synonymCircleNumber.style.display = 'block'; 
-        }
-
-        function showAntonyms(a){
-            let antonymSlot = eval('antonym[' + a + ']');
-            let antonymNumber = eval('tableauAntonym['+ a +']');
-            let antonymCircleNumber = eval('antonymCircle[' + a + ']'); 
-
-            antonymSlot.textContent = "";
-            addInfo(antonymSlot, antonymNumber);
-            antonymCircleNumber.style.display = 'block';  
-        }
-       
-        w.forEach(element => {
-            showDefinitions(element);
-        });
-
-        x.forEach(element => {
-            showExamples(element);
-        });
-
-        y.forEach(element => {
-            showSynonyms(element);
-        });
-
-        z.forEach(element => {
-            showAntonyms(element);
-        });
-    
-    }
-
-    retrieve(convertElementInNumber(tableauDef), convertElementInNumber(tableauExample), convertElementInNumber(tableauSynonym), convertElementInNumber(tableauAntonym)); 
-
+// Ajouter l'en-tête 'Cache-Control: no-store' lors du chargement du fichier audio
+fetch(lienAudioURL, { cache: 'no-store' })
+  .then(response => response.blob())
+  .then(audioBlob => {
+    // Créer un objet Blob à partir du fichier audio
+    const audioURL = URL.createObjectURL(audioBlob);
+    // Attribuer l'URL du fichier audio à l'élément audioPlayer
+    audioPlayer.src = audioURL;
   })
+  .catch(error => {
+    console.error("Erreur lors du chargement du fichier audio :", error);
+  });
+
+        
+        let tableauDef = data[0].meanings[0].definitions; 
+        let tableauExample = findExample(data[0].meanings[0].definitions); 
+        let tableauSynonym = findSynonyms(data[0].meanings[0].definitions); 
+        let tableauAntonym = findAntonyms(data[0].meanings[0].definitions); 
+
+        // trouve tous les exemples dans les .definitions sans afficher les vides //
+        
+        function findExample(i){       
+            var examplesResult = [];    
+            i.forEach(element => {
+                if(element.example != undefined ){
+                    examplesResult.push(element.example);
+                }
+            });
+
+            return examplesResult; 
+            
+        }
+
+        // pour les synonymes// 
+
+        function findSynonyms(i){   
+
+            let synonymResult = [];    
+            i.forEach(element => {
+                if(element.synonyms != "" ){
+
+                    element.synonyms.forEach(sousElement => {
+                        synonymResult.push(sousElement);
+                    });
+                    
+                }
+            });
+
+            return synonymResult; 
+        }
+
+        // pour les antonymes// 
+
+        function findAntonyms(i){     
+            let antonymResult = [];    
+            i.forEach(element => {
+                if(element.antonyms != "" ){
+
+                    element.antonyms.forEach(sousElement => {
+                        antonymResult.push(sousElement);
+                    });
+                    
+                }
+            });
+
+            return antonymResult; 
+        }
+
+        findExample(data[0].meanings[0].definitions); 
+        findSynonyms(data[0].meanings[0].definitions);
+        findAntonyms(data[0].meanings[0].definitions);  
+
+
+        // la fonction retrieve est composée de sous-fonctions qui permettent d'aller rechercher dans la data de l'API les informations concernant les def-ex-syn-ant et de les ajouter au bon endroit en fonction de leurs nombres et de la fonction convertElementInNumber, elle permet aussi de transformer en "" les p qui ne sont pas concernés et leurs points. // 
+
+        function retrieve(w, x, y, z){
+
+            function showDefinitions(a){
+                let defSlot = eval('def[' + a + ']');
+                let defNumber = eval('data[0].meanings[0].definitions['+ a +'].definition');
+                let defCircleNumber = eval('defCircle[' + a + ']'); 
+
+                defSlot.textContent = "";
+                addInfo(defSlot, defNumber);
+                defCircleNumber.style.display = 'block'; 
+            }
+
+            function showExamples(a){
+                let exampleSlot = eval('exemple[' + a + ']');
+                let exampleNumber = eval('tableauExample['+ a +']');
+                let exampleCircleNumber = eval('exampleCircle[' + a + ']'); 
+
+                exampleSlot.textContent = "";
+                addInfo(exampleSlot, exampleNumber);
+                exampleCircleNumber.style.display = 'block'; 
+            }
+
+            function showSynonyms(a){
+                let synonymSlot = eval('synonym[' + a + ']');
+                let synonymNumber = eval('tableauSynonym['+ a +']');
+                let synonymCircleNumber = eval('synonymCircle[' + a + ']'); 
+
+                synonymSlot.textContent = "";
+                addInfo(synonymSlot, synonymNumber);
+                synonymCircleNumber.style.display = 'block'; 
+            }
+
+            function showAntonyms(a){
+                let antonymSlot = eval('antonym[' + a + ']');
+                let antonymNumber = eval('tableauAntonym['+ a +']');
+                let antonymCircleNumber = eval('antonymCircle[' + a + ']'); 
+
+                antonymSlot.textContent = "";
+                addInfo(antonymSlot, antonymNumber);
+                antonymCircleNumber.style.display = 'block';  
+            }
+        
+            w.forEach(element => {
+                showDefinitions(element);
+            });
+
+            x.forEach(element => {
+                showExamples(element);
+            });
+
+            y.forEach(element => {
+                showSynonyms(element);
+            });
+
+            z.forEach(element => {
+                showAntonyms(element);
+            });
+        
+        }
+
+        retrieve(convertElementInNumber(tableauDef), convertElementInNumber(tableauExample), convertElementInNumber(tableauSynonym), convertElementInNumber(tableauAntonym)); 
+
+    })
 
 
 
@@ -285,10 +320,9 @@ function searchButton(){
         antonyms.style.display = 'block'; 
     }
    
-} else {
-    errorMessage.textContent = "Enter a word please"
-}
-
+    } else {
+        errorMessage.textContent = "Enter a word please"
+    }
 }
 
 searchWen.addEventListener('click', searchButton); 
@@ -323,10 +357,8 @@ function change(){
 
                 antonyms.style.display = 'block'; 
             }
-           
         }
         }
-        
     }
 
 buttonRow.addEventListener('click', change); 
@@ -346,8 +378,6 @@ function darkModeImg(){
         darkBullet.forEach(element =>{
             element.style.backgroundColor = '#E3E3E3';
         })
-    
-        
     }
 }
 
@@ -394,24 +424,21 @@ document.addEventListener('keydown', (event) =>{
     }
 });
 
-// en cours // 
 
-  
-  document.addEventListener('click', () => {
+  function synonymsAndAntonymsClickables(){
     
     synonymsAndAntonyms.forEach(element => {
-      
         element.addEventListener('click', () => {
-          // Code à exécuter lorsque vous cliquez sur l'élément
           searchBar.value = element.textContent;
           searchButton();
           label1.click(); 
-          
-
         });
       
     });
     
-  });
+  };
+
+  document.addEventListener('click', synonymsAndAntonymsClickables);
+
 
   
