@@ -6,12 +6,41 @@
     --color-number : #7C8798;
     --color-orange : #FC7614;
     --color-white : #FFFFFF;
-    --color-grey : #969FAD;
+    --color-white-text : #E3E3E3;
+    --color-grey-text : #2B2B2B;
     --color-background : #131518;
 }
 
+@font-face {
+    font-family: 'Merriweather Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(src/asset/font/Merriweather-sans-bold.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(src/asset/font/Inter-medium.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+  @font-face {
+    font-family: 'Inter-bold';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(src/asset/font/Inter-bold.woff2) format('woff2');
+    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+
 body{
     margin: 0;
+    font-family: 'Inter', sans-serif;
 }
 
 #header{
@@ -56,11 +85,13 @@ body{
     height: 16px;
     margin-top: 3px;
     margin-left: 26px;
-    background-color: #FFF;
+    background-color: var(--color-white);
     border-radius: 11px;
 }
 
 .inputValid{
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
     width: 323px;
     border-radius: 20px 0px 0px 20px;
     padding-top: 8px;
@@ -69,8 +100,9 @@ body{
     border: 2px solid #43A2B7;
     margin-top: 72px;
     margin-bottom: 29px;
-    margin-left: 478px; /*478*/
+    margin-left: 478px; 
     outline: none;
+    color: var(--color-grey-text);
 }
 
 .inputValid:hover, #header > .inputValid:focus{
@@ -94,6 +126,7 @@ body{
 }
 
 .slogan{
+    font-family: 'Merriweather Sans';
     width: 375px;
     font-size: 16px;
     font-weight: 700;
@@ -101,7 +134,7 @@ body{
     line-height: 27px;
     margin: 0;
     margin-top: 78px;
-    margin-left: 1005px; /*1005*/
+    margin-left: 1005px; 
 }
 
 #header > p:nth-child(7){
@@ -126,7 +159,7 @@ display: none;
     font-size: 24px;
     line-height: 29px;
     font-weight: 700;
-    color: white;
+    color: var(--color-white);
     background-color: #707070;
     opacity: 0.70;
     padding-top: 10px;
@@ -162,11 +195,12 @@ display: none;
 }
 
 label{
+    font-family: 'Merriweather Sans';
     width: 250px;
     font-size: 24px;
     line-height: 29px;
     font-weight: 700;
-    color: white;
+    color: var(--color-white);
     background-color: #707070;
     opacity: 0.70;
     display: block;
@@ -275,7 +309,7 @@ input:checked +label{
 .blackcircle{
     min-width: 15px;
     height: 15px;
-    background-color: #2B2B2B;
+    background-color: var(--color-grey-text);
     border-radius: 11px;
     transition: background-color 1s;
 }
@@ -296,7 +330,7 @@ input:checked +label{
 }
 
 .text{
-    color: #2B2B2B;
+    color: var(--color-grey-text);
     transition: color 1s;
 }
 
@@ -324,7 +358,7 @@ input:checked +label{
 
 .container{
     min-height: 100vh;
-    background-color: #fff;
+    background-color: var(--color-white);
     transition: background-color 1s;
 }
 
@@ -390,18 +424,18 @@ input:checked + .darkLabel{
 }
 
 .darkBullet{
-    background-color: #e4e4e4;
+    background-color: var(--color-white-text);
     transition: background-color 1s;
 }
 
 .darkText{
-    color: #E3E3E3;
+    color: var(--color-white-text);
     transition: color 1s;
 }
 
 
 .darkWord{
-    color: #FFF;
+    color: var(--color-white);
     transition: color 1s;
 }
 

@@ -1,12 +1,214 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Webpack App</title>
-    </head>
-    <body>
-        <h1>Hello world!</h1>
-        <h2>Tip: Check your console</h2>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <title>05-lab-dictionary</title>
+    <link rel="preload" href="src/asset/font/Merriweather-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="src/asset/font/Inter-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="src/asset/font/Inter-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     
+</head>
+<body>
+    <div class='container'> 
+        <div id="header">
+            <img src="picture/logo.svg" width="264" height="46" alt="dictionary the word is yours write beside a world">
+            <div class="rectangle">
+                <div id="circle"></div>
+            </div>
+            <input type="text" name="searchBar"  placeholder="Start typing a word!" class="inputValid">
+            <div class="search">
+                <img src="picture/search.svg" width="19" height="21" alt="magnifying glass">
+            </div>
+            <p class="slogan">Your linguistic guide, always at your fingertips.</p>
+            <img src="picture/darkLogo.svg" width="264" height="63" alt="dictionary the word is yours write beside a world">
+            <p></p>
+            <p></p>
+            <audio id="audioPlayer" controls>
+                <source src="chemin/vers/votre/fichier_audio.mp3" type="audio/mpeg">
+                <!-- Vous pouvez ajouter d'autres sources ici pour prendre en charge différents formats audio -->
+                Votre navigateur ne prend pas en charge l'élément audio.
+            </audio>
+
+        </div>
+        <div id="page">
+            <div id = "buttonRow">
+                <div class = "button">
+                    <input type="radio" id="value_1" name="value" value="1">
+                    <label for="value_1">Definition</label>
+                </div>
+                <div class = "button">
+                    <input type="radio" id="value_2" name="value" value="2">
+                    <label for="value_2">Examples</label>
+                </div>
+                <div class = "button">
+                    <input type="radio" id="value_3" name="value" value="3">
+                    <label for="value_3">Synonyms</label>
+                </div>
+                <div class = "button">
+                    <input type="radio" id="value_4" name="value" value="4">
+                    <label for="value_4">Antonyms</label>
+                </div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div id="mot">
+            <p></p>
+            <p class="textTitle"></p>
+            <p class="textTitle"></p>
+            <img src="picture/sound.svg" width="48" height="51" alt ="black speacker">
+            <img src="picture/darkSound.png" width="48" height="51" alt ="black speacker">
+        </div>
+        <div id="blackline"></div>
+        <div id="definition"> 
+            <div class="flex">
+                <div class="blackcircle"></div>
+                <p class="text"></p>
+            </div>
+            <div class="flex">
+                <div class="blackcircle"></div>
+                <p class="text"></p>
+            </div>
+            <div class="flex">
+                <div class="blackcircle"></div>
+                <p class="text"></p>
+            </div>
+            <div class="flex">
+                <div class="blackcircle"></div>
+                <p class="text"></p>
+            </div>
+            <div class="flex">
+                <div class="blackcircle"></div>
+                <p class="text"></p>
+            </div>
+            <div class="flex">
+                <div class="blackcircle"></div>
+                <p class="text"></p>
+            </div>
+            <div class="flex">
+                <div class="blackcircle"></div>
+                <p class="text"></p>
+            </div>
+            <div class="flex">
+                <div class="blackcircle"></div>
+                <p class="text"></p>
+            </div>
+        </div>
+        <div id="examples"> 
+            <div class="flex">
+                <div class="blackcircle"></div>
+                <p class="text"></p>
+            </div>
+            <div class="flex">
+                <div class="blackcircle"></div>
+                <p class="text"></p>
+            </div>
+            <div class="flex">
+                <div class="blackcircle"></div>
+                <p class="text"></p>
+            </div>
+            <div class="flex">
+                <div class="blackcircle"></div>
+                <p class="text"></p>
+            </div>
+            <div class="flex">
+                <div class="blackcircle"></div>
+                <p class="text"></p>
+            </div>
+            <div class="flex">
+                <div class="blackcircle"></div>
+                <p class="text"></p>
+            </div>
+            <div class="flex">
+                <div class="blackcircle"></div>
+                <p class="text"></p>
+            </div>
+            <div class="flex">
+                <div class="blackcircle"></div>
+                <p class="text"></p>
+            </div>
+        </div>
+        <div id="synonyms"> 
+            <div class="flexRow">
+                <div class="flex">
+                    <div class="blackcircle"></div>
+                    <p class="text"></p>
+                </div>
+                <div class="flex">
+                    <div class="blackcircle"></div>
+                    <p class="text"></p>
+                </div>
+                <div class="flex">
+                    <div class="blackcircle"></div>
+                    <p class="text"></p>
+                </div>
+                <div class="flex">
+                    <div class="blackcircle"></div>
+                    <p class="text"></p>
+                </div>
+            </div>
+            <div class="flexRow">
+                <div class="flex">
+                    <div class="blackcircle"></div>
+                    <p class="text"></p>
+                </div>
+                <div class="flex">
+                    <div class="blackcircle"></div>
+                    <p class="text"></p>
+                </div>
+                <div class="flex">
+                    <div class="blackcircle"></div>
+                    <p class="text"></p>
+                </div>
+                <div class="flex">
+                    <div class="blackcircle"></div>
+                    <p class="text"></p>
+                </div>
+            </div>
+        </div>
+        <div id="antonyms"> 
+            <div class="flexRow">
+                <div class="flex">
+                    <div class="blackcircle"></div>
+                    <p class="text"></p>
+                </div>
+                <div class="flex">
+                    <div class="blackcircle"></div>
+                    <p class="text"></p>
+                </div>
+                <div class="flex">
+                    <div class="blackcircle"></div>
+                    <p class="text"></p>
+                </div>
+                <div class="flex">
+                    <div class="blackcircle"></div>
+                    <p class="text"></p>
+                </div>
+            </div>
+            <div class="flexRow">
+                <div class="flex">
+                    <div class="blackcircle"></div>
+                    <p class="text"></p>
+                </div>
+                <div class="flex">
+                    <div class="blackcircle"></div>
+                    <p class="text">Antonym</p>
+                </div>
+                <div class="flex">
+                    <div class="blackcircle"></div>
+                    <p class="text"></p>
+                </div>
+                <div class="flex">
+                    <div class="blackcircle"></div>
+                    <p class="text"></p>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    
+</body>
 </html>
