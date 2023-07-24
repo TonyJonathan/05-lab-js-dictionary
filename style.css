@@ -50,7 +50,7 @@ body{
     grid-template-columns: 1440px;
 }
 
-#header > img:nth-child(1), .rectangle, #circle, #header > input:nth-child(3), .search, #header > p:nth-child(5),#header > img:nth-child(6), #header > p:nth-child(7), #header > p:nth-child(8){
+#header > img:nth-child(1), .rectangle, #circle, #header > input:nth-child(3), .search, #header > p:nth-child(5),#header > img:nth-child(6), #header > p:nth-child(7), #header > p:nth-child(8), #header > img:nth-child(10){
     grid-column-start: 1;
     grid-row-start: 1;
 }
@@ -122,11 +122,11 @@ body{
     padding-left: 14px;
     margin-top: 72px;
     margin-bottom: 29px;
-    margin-left: 836px; /*772*/
+    margin-left: 836px; 
 }
 
 .slogan{
-    font-family: 'Merriweather Sans';
+    font-family: 'Merriweather Sans', serif;
     width: 375px;
     font-size: 16px;
     font-weight: 700;
@@ -134,7 +134,7 @@ body{
     line-height: 27px;
     margin: 0;
     margin-top: 78px;
-    margin-left: 1005px; 
+    margin-left: 950px; 
 }
 
 #header > p:nth-child(7){
@@ -152,6 +152,22 @@ display: none;
 
 #audioPlayer{
     display: none;
+}
+
+.clearGears{
+    filter: invert(8%) sepia(1%) saturate(4095%) hue-rotate(314deg) brightness(103%) contrast(80%);
+    margin: 0;
+    margin-top: 60px;
+    margin-left: 1350px;
+}
+
+.clearGears:hover{
+    filter: invert(59%) sepia(16%) saturate(1375%) hue-rotate(144deg) brightness(93%) contrast(88%);
+    opacity: 0.5;
+    margin: 0;
+    margin-top: 60px;
+    margin-left: 1350px;
+    cursor: pointer;
 }
 
 .onglet{
@@ -438,5 +454,20 @@ input:checked + .darkLabel{
     color: var(--color-white);
     transition: color 1s;
 }
+
+
+
+
+.darkGears{
+    filter: invert(88%) sepia(0%) saturate(1972%) hue-rotate(141deg) brightness(100%) contrast(101%);
+}
+
+
+.darkGears:hover{
+    filter: invert(59%) sepia(16%) saturate(1375%) hue-rotate(159deg) brightness(93%) contrast(88%);
+    opacity: 1;
+     
+}
+
 
 

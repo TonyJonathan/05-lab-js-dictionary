@@ -25,6 +25,7 @@ const rectangle = document.querySelector('.rectangle');
 const searchBar = document.querySelector('.inputValid');
 const searchWen = document.querySelector('.search');
 const slogan = document.querySelector('#header > p:nth-child(5)');
+const gears = document.querySelector('#header > img:nth-child(10)'); 
 
 const label1 = document.querySelector('label'); 
 const label2 = document.querySelector('#buttonRow > .button:nth-child(2) > label'); 
@@ -362,7 +363,6 @@ function darkModeImg(){
     }
 }
 
-function darkMode() {
 
     container.classList.toggle('blackContainer'); 
     rectangle.classList.toggle('darkRectangle'); 
@@ -377,10 +377,8 @@ function darkMode() {
     searchBar.classList.toggle('darkSearchBar'); 
     searchWen.classList.toggle('darkSearch'); 
     darkWord.classList.toggle('darkWord'); 
-
+    gears.classList.toggle('darkGears');
     console.log(rectangle.classList.value); 
-    
-
 
     darkResponse.forEach(element =>{
         element.classList.toggle('darkText'); 
@@ -389,9 +387,7 @@ function darkMode() {
     darkModeImg();
 }
 
-
 rectangle.addEventListener('click', darkMode); 
-
 
 function eraseErrorMessage(){
     errorMessage.textContent = "";
@@ -404,7 +400,6 @@ document.addEventListener('keydown', (event) =>{
         searchButton();
     }
 });
-
 
   function synonymsAndAntonymsClickables(){
     
