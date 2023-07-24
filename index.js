@@ -145,34 +145,15 @@ function searchButton(){
         partOfSpeech.textContent = data[0].meanings[0].partOfSpeech; 
         lienAudio.textContent = data[0].phonetics[0].audio; 
         const lienAudioURL = lienAudio.textContent;
+        const audioPlayer = document.querySelector('#audioPlayer');
 
+        soundLogo.addEventListener('click', () =>{
 
-        const audioPlayer = new Audio();
+            audioPlayer.src = lienAudioURL;
+            audioPlayer.load();
+            audioPlayer.play(); 
+        }); 
 
-audioPlayer.addEventListener('canplaythrough', () => {
-  // Le fichier audio est chargé et prêt à être lu
-  audioPlayer.play();
-});
-
-soundLogo.addEventListener('click', () => {
-    // Le fichier audio est chargé et prêt à être lu
-    audioPlayer.play();
-  });
-
-// Ajouter l'en-tête 'Cache-Control: no-store' lors du chargement du fichier audio
-fetch(lienAudioURL, { cache: 'no-store' })
-  .then(response => response.blob())
-  .then(audioBlob => {
-    // Créer un objet Blob à partir du fichier audio
-    const audioURL = URL.createObjectURL(audioBlob);
-    // Attribuer l'URL du fichier audio à l'élément audioPlayer
-    audioPlayer.src = audioURL;
-  })
-  .catch(error => {
-    console.error("Erreur lors du chargement du fichier audio :", error);
-  });
-
-        
         let tableauDef = data[0].meanings[0].definitions; 
         let tableauExample = findExample(data[0].meanings[0].definitions); 
         let tableauSynonym = findSynonyms(data[0].meanings[0].definitions); 
