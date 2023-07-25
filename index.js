@@ -363,6 +363,7 @@ function darkModeImg(){
     }
 }
 
+function darkMode() {
 
     container.classList.toggle('blackContainer'); 
     rectangle.classList.toggle('darkRectangle'); 
