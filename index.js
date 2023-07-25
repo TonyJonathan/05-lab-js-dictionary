@@ -443,5 +443,15 @@ document.addEventListener('keydown', (event) =>{
     }
   })
 
-
   
+window.addEventListener('click', (event) =>{
+    if(event.target == inputModal1){
+        document.body.style.fontFamily = 'Merriweather Sans, sans-serif';
+    }
+    if(event.target == inputModal2){
+        document.body.style.fontFamily = 'EB Garamond, serif';
+    }
+    if(event.target == inputModal3){
+        document.body.style.fontFamily = 'JetBrains Mono, monospace';
+    }
+});
