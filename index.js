@@ -41,6 +41,9 @@ const darkSoundLogo = document.querySelector('#mot > img:nth-child(5)');
 
 const firstDef = document.querySelector('#definition > .flex > p:nth-child(2)')
 
+const modal = document.querySelector('.modal'); 
+const modalContent = document.querySelector('.modalContent'); 
+
 
 
 
@@ -219,8 +222,8 @@ function searchButton(){
         function retrieve(w, x, y, z){
 
             function showDefinitions(a){
-                let defSlot = eval('def[' + a + ']');
-                let defNumber = eval('data[0].meanings[0].definitions['+ a +'].definition');
+                let defSlot = eval('def[' + a + ']'); // correspond à la partie html
+                let defNumber = eval('data[0].meanings[0].definitions['+ a +'].definition'); // correspond a la partie data récupérée 
                 let defCircleNumber = eval('defCircle[' + a + ']'); 
 
                 defSlot.textContent = "";
@@ -418,4 +421,18 @@ document.addEventListener('keydown', (event) =>{
   document.addEventListener('click', synonymsAndAntonymsClickables);
 
 
-  
+  function openModal(){
+    modal.style.display = 'block'; 
+  }
+
+  gears.addEventListener('click', openModal);
+
+  function closeModal(){
+    modal.style.display = 'none'; 
+  }
+
+  window.addEventListener('click', (event) =>{
+    if(event.target !== modalContent && event.target !== gears){
+        closeModal(); 
+    }
+  })

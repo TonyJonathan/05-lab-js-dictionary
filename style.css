@@ -471,3 +471,64 @@ input:checked + .darkLabel{
 
 
 
+
+
+
+
+/* modal */ 
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
+}
+
+.modalContent {
+    background-color: #fff;
+    padding: 20px 0px 20px 20px;
+    border-radius: 15px;
+    max-width: 300px;
+    margin: 15% auto;
+    position: relative;
+    border: 3px solid #9f0476;
+}
+
+.buttonModal > label {
+    font-family: 'Merriweather Sans';
+    width: 250px;
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 700;
+    color: var(--color-white);
+    background-color: #707070;
+    opacity: 0.70;
+    display: block;
+     padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    border-radius: 10px 10px 10px 10px;
+    margin: 0;
+    transition: opacity 1s;    
+}
+
+.buttonModal > input {
+    display: none;
+}
+
+label:hover{
+    background-color: #43A2B7;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: color 0s;
+} 
+
+input:checked +label{
+    opacity: 1;
+    background-color: #43A2B7;
+    transition: background-color 1s;
+}
