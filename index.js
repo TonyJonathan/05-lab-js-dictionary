@@ -43,6 +43,12 @@ const firstDef = document.querySelector('#definition > .flex > p:nth-child(2)')
 
 const modal = document.querySelector('.modal'); 
 const modalContent = document.querySelector('.modalContent'); 
+const labelModal1 = document.querySelector('.modalContent > .buttonModal:nth-child(2) > label'); 
+const inputModal1 = document.querySelector('.modalContent > .buttonModal:nth-child(2) > input'); 
+const labelModal2 = document.querySelector('.modalContent > .buttonModal:nth-child(3) > label'); 
+const inputModal2 = document.querySelector('.modalContent > .buttonModal:nth-child(3) > input'); 
+const labelModal3 = document.querySelector('.modalContent > .buttonModal:nth-child(4) > label'); 
+const inputModal3 = document.querySelector('.modalContent > .buttonModal:nth-child(4) > input'); 
 
 
 
@@ -432,7 +438,10 @@ document.addEventListener('keydown', (event) =>{
   }
 
   window.addEventListener('click', (event) =>{
-    if(event.target !== modalContent && event.target !== gears){
+    if(event.target !== modalContent && event.target !== gears && event.target !== inputModal1 && event.target !== labelModal1  && event.target !== inputModal2 && event.target !== labelModal2  && event.target !== inputModal3 && event.target !== labelModal3){
         closeModal(); 
     }
   })
+
+
+  

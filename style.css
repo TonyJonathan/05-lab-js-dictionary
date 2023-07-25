@@ -11,6 +11,15 @@
     --color-background : #131518;
 }
 
+
+@font-face {
+    font-family: 'Merriweather Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url(src/asset/font/Merriweather-sans-medium.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
 @font-face {
     font-family: 'Merriweather Sans';
     font-style: normal;
@@ -126,7 +135,7 @@ body{
 }
 
 .slogan{
-    font-family: 'Merriweather Sans', serif;
+    font-family: 'Merriweather Sans', sans-serif;
     width: 375px;
     font-size: 16px;
     font-weight: 700;
@@ -170,20 +179,6 @@ display: none;
     cursor: pointer;
 }
 
-.onglet{
-    width: 250px;
-    font-size: 24px;
-    line-height: 29px;
-    font-weight: 700;
-    color: var(--color-white);
-    background-color: #707070;
-    opacity: 0.70;
-    padding-top: 10px;
-    padding-bottom: 3px;
-    text-align: center;
-    border-radius: 25px 25px 0px 0px;
-    margin: 0;
-}
 
 #page > p:first-child{
     background-color: #43A2B7;
@@ -460,6 +455,7 @@ input:checked + .darkLabel{
 
 .darkGears{
     filter: invert(88%) sepia(0%) saturate(1972%) hue-rotate(141deg) brightness(100%) contrast(101%);
+   
 }
 
 
@@ -468,11 +464,6 @@ input:checked + .darkLabel{
     opacity: 1;
      
 }
-
-
-
-
-
 
 
 /* modal */ 
@@ -490,12 +481,30 @@ input:checked + .darkLabel{
 
 .modalContent {
     background-color: #fff;
-    padding: 20px 0px 20px 20px;
+    padding: 7px 0px 20px 45px;
     border-radius: 15px;
     max-width: 300px;
     margin: 15% auto;
     position: relative;
     border: 3px solid #9f0476;
+    display: block;
+}
+
+.modalContent > img{
+    transform: rotate(45deg);
+    margin-left: 260px;
+}
+
+.modalContent > img:hover{
+    transform: rotate(45deg);
+    margin-left: 260px;
+    filter: invert(13%) sepia(98%) saturate(3319%) hue-rotate(303deg) brightness(88%) contrast(109%);
+    cursor: pointer;    
+}
+
+
+.buttonModal{
+    width: 250px;
 }
 
 .buttonModal > label {
@@ -508,8 +517,8 @@ input:checked + .darkLabel{
     background-color: #707070;
     opacity: 0.70;
     display: block;
-     padding-top: 10px;
-    padding-bottom: 10px;
+     padding-top: 15px;
+    padding-bottom: 15px;
     text-align: center;
     border-radius: 10px 10px 10px 10px;
     margin: 0;
@@ -520,15 +529,25 @@ input:checked + .darkLabel{
     display: none;
 }
 
-label:hover{
-    background-color: #43A2B7;
+.buttonModal > label:hover{
+    background-color: #9f0476;
     opacity: 0.5;
     cursor: pointer;
     transition: color 0s;
 } 
 
-input:checked +label{
+.buttonModal > input:checked + label{
     opacity: 1;
-    background-color: #43A2B7;
+    background-color: #9f0476;
     transition: background-color 1s;
+}
+
+.modalContent > .buttonModal > label {
+    margin-bottom: 20px;
+}
+
+
+.modalContent > .buttonModal:nth-child(2) > label{
+    font-family: 'Merriweather Sans', monospace;
+    
 }
