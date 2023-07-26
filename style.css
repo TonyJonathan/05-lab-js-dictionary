@@ -289,6 +289,7 @@ input:checked +label{
     margin:0;
     margin-top: 75px;
     margin-left: 35px;
+    white-space: nowrap;
 }
 
 #mot > p:nth-child(3){
@@ -597,3 +598,58 @@ input:checked + .darkLabel{
     background-color: #363636;
 }
 
+@media (max-width: 1025px) {
+
+    .slogan{
+        display: none;
+    }
+
+    .inputValid{
+        margin-left: 360px; 
+    }
+
+    .search{
+        margin-left: 719px; 
+    }
+
+    .rectangle{
+        margin-left: 820px;
+    }
+
+    #header > p:nth-child(7){
+        margin-left: 380px;
+    }
+
+    .clearGears{
+        margin-left: 920px;
+    }
+
+    .clearGears:hover{
+        margin-left: 920px;
+    }
+
+    label{
+        width: 210px;
+    }
+
+    .line{
+        width: 940px;
+    }
+
+    #mot > p:nth-child(1){
+        font-size: 50px;
+    }
+    #mot > p:nth-child(2){
+        font-size: 26px;
+    }
+    #mot > p:nth-child(3){
+        font-size: 26px;
+    }
+
+    #mot > img:nth-child(4){
+        margin-top: 70px;
+    }
+    
+
+
+}
