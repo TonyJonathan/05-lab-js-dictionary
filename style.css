@@ -110,13 +110,14 @@ body{
     cursor: pointer;
 }
 
-#circle{
+.circle{
     width: 16px;
     height: 16px;
     margin-top: 3px;
     margin-left: 26px;
     background-color: var(--color-white);
     border-radius: 11px;
+    transition: margin 0.5s ease-in-out;
 }
 
 .inputValid{
@@ -155,14 +156,15 @@ body{
 }
 
 .slogan{
-    width: 375px;
+    width: 290px;
     font-size: 16px;
     font-weight: 700;
     color: #145462;
     line-height: 27px;
     margin: 0;
-    margin-top: 78px;
-    margin-left: 950px; 
+    margin-top: 65px;
+    margin-left: 990px; 
+    text-align: center;
 }
 
 #header > p:nth-child(7){
@@ -198,7 +200,6 @@ display: none;
     cursor: pointer;
 }
 
-
 #page > p:first-child{
     background-color: #43A2B7;
     opacity: 1;
@@ -206,6 +207,7 @@ display: none;
 }
 
 #page{
+    width: 1250px;
     display: flex;
     margin-top: 79px;
     margin-left: 43px;
@@ -394,12 +396,14 @@ input:checked +label{
 .blackContainer{
     background-color: #363636;
     min-height: 100vh;
+    min-width: 100%;
+    max-width: 100%;
     opacity: 1;
     transition: background-color 1s, opacity 1s;
 }
 
 .darkRectangle{
-    background-color: #b74f4f;
+    background-color: var(--color-white);
 }
 
 .darkRectangle:hover{
@@ -407,8 +411,17 @@ input:checked +label{
     cursor: pointer;
 }
 
+.darkRectangle:hover > .circle{
+    background-color: var(--color-white);
+    cursor: pointer;
+}
+
 .darkCircle{
     background-color: #000;
+    margin-left: 4px;
+    transition: margin 0.5s ease-in-out;
+ 
+
 }
 
 .darkLabel{
@@ -575,3 +588,12 @@ input:checked + .darkLabel{
 .modalContent > .buttonModal:nth-child(4) > label{
     font-family: 'JetBrains Mono', monospace;
 }
+
+.buttonModal > .darkLabelModal{
+    opacity: 1;
+}
+
+.darkModalContent{
+    background-color: #363636;
+}
+

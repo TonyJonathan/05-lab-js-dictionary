@@ -21,6 +21,7 @@ const lienAudio = document.querySelector('#header > p:nth-child(8)');
 const container = document.querySelector('.container');
 const logo = document.querySelector('#header > img:nth-child(1)');
 const darkLogo = document.querySelector('#header > img:nth-child(6)');
+const circle = document.querySelector('.circle');
 const rectangle = document.querySelector('.rectangle'); 
 const searchBar = document.querySelector('.inputValid');
 const searchWen = document.querySelector('.search');
@@ -376,6 +377,7 @@ function darkMode() {
 
     container.classList.toggle('blackContainer'); 
     rectangle.classList.toggle('darkRectangle'); 
+    circle.classList.toggle('darkCircle'); 
     slogan.classList.toggle('darkSlogan');
     label1.classList.toggle('darkLabel'); 
     label2.classList.toggle('darkLabel'); 
@@ -388,7 +390,10 @@ function darkMode() {
     searchWen.classList.toggle('darkSearch'); 
     darkWord.classList.toggle('darkWord'); 
     gears.classList.toggle('darkGears');
-    console.log(rectangle.classList.value); 
+    labelModal1.classList.toggle('darkLabelModal');
+    labelModal2.classList.toggle('darkLabelModal');
+    labelModal3.classList.toggle('darkLabelModal');
+    modalContent.classList.toggle('darkModalContent'); 
 
     darkResponse.forEach(element =>{
         element.classList.toggle('darkText'); 
@@ -455,3 +460,5 @@ window.addEventListener('click', (event) =>{
         document.body.style.fontFamily = 'JetBrains Mono, monospace';
     }
 });
+
+inputModal1.click(); 
