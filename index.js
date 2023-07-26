@@ -34,11 +34,12 @@ const label3 = document.querySelector('#buttonRow > .button:nth-child(3) > label
 const label4 = document.querySelector('#buttonRow > .button:nth-child(4) > label'); 
 const line = document.querySelector('.line'); 
 const darkWord = document.querySelector('#mot > p:nth-child(1)');
+const soundLogo = document.querySelector('#mot > img:nth-child(4)');
 const darkBullet = document.querySelectorAll('.blackcircle, #blackline'); 
 const darkResponse = document.querySelectorAll('.text, .textTitle');
 
-const soundLogo = document.querySelector('#mot > img:nth-child(4)');
-const darkSoundLogo = document.querySelector('#mot > img:nth-child(5)');
+
+
 
 const firstDef = document.querySelector('#definition > .flex > p:nth-child(2)')
 
@@ -357,16 +358,10 @@ buttonRow.addEventListener('click', change);
 
 function darkModeImg(){
     if(rectangle.classList.value == 'rectangle'){
-        soundLogo.style.display = 'block';
-        darkSoundLogo.style.display = 'none';
         darkBullet.forEach(element =>{
             element.style.backgroundColor = '#2B2B2B';
         })
-        
     } else {
-        soundLogo.style.display = 'none';
-        darkSoundLogo.style.display = 'block';
-        
         darkBullet.forEach(element =>{
             element.style.backgroundColor = '#E3E3E3';
         })
@@ -394,6 +389,7 @@ function darkMode() {
     labelModal2.classList.toggle('darkLabelModal');
     labelModal3.classList.toggle('darkLabelModal');
     modalContent.classList.toggle('darkModalContent'); 
+    soundLogo.classList.toggle('darkSoundLogo'); 
 
     darkResponse.forEach(element =>{
         element.classList.toggle('darkText'); 
@@ -462,3 +458,5 @@ window.addEventListener('click', (event) =>{
 });
 
 inputModal1.click(); 
+
+// 9f0476

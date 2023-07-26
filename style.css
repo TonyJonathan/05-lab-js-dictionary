@@ -168,6 +168,7 @@ body{
 }
 
 #header > p:nth-child(7){
+    width: 400px;
     color: #ff1c1c;
     margin: 0;
     margin-left: 510px;
@@ -318,17 +319,6 @@ input:checked +label{
     cursor: pointer;
 }
 
-#mot > img:nth-child(5){
-    margin-top: 75px;
-    margin-left: 29px;
-    border: 2px solid rgba(255, 255, 255, 0);
-}
-
-#mot > img:nth-child(5):hover{
-    border: 2px solid #16C4EA;
-    cursor: pointer;
-}
-
 #blackline{
     width: 1000px;
     background-color: #000000;
@@ -392,6 +382,7 @@ input:checked +label{
     min-height: 100vh;
     background-color: var(--color-white);
     transition: background-color 1s;
+    padding-bottom: 50px;
 }
 
 .blackContainer{
@@ -408,7 +399,7 @@ input:checked +label{
 }
 
 .darkRectangle:hover{
-    background-color: #bb3485;
+    background-color: #6d0b7c;
     cursor: pointer;
 }
 
@@ -466,6 +457,10 @@ input:checked + .darkLabel{
     transition: color 1s;
 }
 
+.darkSoundLogo{
+    filter: invert(77%) sepia(0%) saturate(7396%) hue-rotate(277deg) brightness(113%) contrast(105%);
+}
+
 .darkBullet{
     background-color: var(--color-white-text);
     transition: background-color 1s;
@@ -518,7 +513,7 @@ input:checked + .darkLabel{
     max-width: 300px;
     margin: 15% auto;
     position: relative;
-    border: 3px solid #9f0476;
+    border: 3px solid #6d0b7c;
     display: block;
 }
 
@@ -561,7 +556,7 @@ input:checked + .darkLabel{
 }
 
 .buttonModal > label:hover{
-    background-color: #9f0476;
+    background-color: #6d0b7c;
     opacity: 0.5;
     cursor: pointer;
     transition: color 0s;
@@ -569,7 +564,7 @@ input:checked + .darkLabel{
 
 .buttonModal > input:checked + label{
     opacity: 1;
-    background-color: #9f0476;
+    background-color: #6d0b7c;
     transition: background-color 1s;
 }
 
@@ -594,11 +589,30 @@ input:checked + .darkLabel{
     opacity: 1;
 }
 
+.buttonModal > .darkLabelModal:hover{
+  opacity: 1;
+  background-color: #85558d;
+  
+}
+
+.buttonModal > input:checked + .darkLabelModal{
+    background-color: #6d0b7c;
+    transition: none; 
+  }
+
 .darkModalContent{
     background-color: #363636;
 }
 
 @media (max-width: 1025px) {
+
+    #header{
+        width: 1024px;
+    }
+
+    #page{
+        width: 900px;
+    }
 
     .slogan{
         display: none;
@@ -648,6 +662,23 @@ input:checked + .darkLabel{
 
     #mot > img:nth-child(4){
         margin-top: 70px;
+    }
+    
+    #blackline{
+        width: 800px;
+    }
+
+    .flex > .text {
+        width: 750px;
+    }
+
+    .flexRow > .flex{
+        width: 150px;
+    }
+
+    .flexRow > .flex > p{
+        font-size: 18px;
+        line-height: 34px;  
     }
     
 
