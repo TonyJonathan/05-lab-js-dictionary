@@ -681,6 +681,44 @@ input:checked + .darkLabel{
         line-height: 34px;  
     }
     
+}
+
+@media (max-width: 769px) {
+
+    #header > img:nth-child(1){
+        width: 192px;
+    }
+
+    #header > img:nth-child(6){
+        width: 192px;
+    }
+
+    .inputValid{
+        width: 200px;
+        margin-left: 285px; 
+    }
+
+    .search{
+        margin-left: 515px; 
+    }
+
+    .rectangle{
+        margin-left: 610px;
+    }
+
+    /* en cours */ 
+
+    #header > p:nth-child(7){
+        margin-left: 380px;
+    }
+
+    .clearGears{
+        margin-left: 690px;
+    }
+
+    .clearGears:hover{
+        margin-left: 690px;
+    }
 
 
 }
