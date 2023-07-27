@@ -685,6 +685,14 @@ input:checked + .darkLabel{
 
 @media (max-width: 769px) {
 
+    #header{
+        width: 768px;
+    }
+
+    #page{
+        width: 620px;
+    }
+
     #header > img:nth-child(1){
         width: 192px;
     }
@@ -706,10 +714,9 @@ input:checked + .darkLabel{
         margin-left: 610px;
     }
 
-    /* en cours */ 
-
     #header > p:nth-child(7){
-        margin-left: 380px;
+        margin-left: 300px;
+        font-size: 12px;
     }
 
     .clearGears{
@@ -719,6 +726,70 @@ input:checked + .darkLabel{
     .clearGears:hover{
         margin-left: 690px;
     }
+
+    label{
+        width: 150px;
+        font-size: 18px;
+    }
+
+    .line{
+        width: 700px;
+    }
+
+    #mot > p:nth-child(1){
+        font-size: 30px;
+        margin-top: 30px;
+    }
+    #mot > p:nth-child(2){
+        font-size: 20px;
+        margin-top: 51px;
+    }
+    #mot > p:nth-child(3){
+        font-size: 20px;
+        margin-top: 51px;
+    }
+
+    #mot > img:nth-child(4){
+        margin-top: 46px;
+    }
+
+    #blackline{
+        width: 620px;
+    }
+
+    .flex > .text {
+        width: 590px;
+    }
+
+    .flexRow > .flex{
+        width: 110px;
+    }
+
+    .flexRow > .flex > p{
+        font-size: 14px;
+        line-height: 34px;  
+    }
+
+    .modalContent {
+        max-width:250px;
+    }
+    
+    .modalContent > img{
+        margin-left: 210px;
+    }
+    
+    .modalContent > img:hover{
+        margin-left: 210px;  
+    }
+     
+    .buttonModal > label {
+        width: 200px;
+        font-size: 18px;
+        line-height: 20px;
+    }
+
+    
+
 
 
 }
