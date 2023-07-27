@@ -71,6 +71,7 @@
 body{
     margin: 0;
     font-family: 'Merriweather Sans', sans-serif;
+
 }
 
 #header{
@@ -604,6 +605,8 @@ input:checked + .darkLabel{
     background-color: #363636;
 }
 
+
+
 @media (max-width: 1025px) {
 
     #header{
@@ -699,6 +702,7 @@ input:checked + .darkLabel{
 
     #header > img:nth-child(6){
         width: 192px;
+        
     }
 
     .inputValid{
@@ -708,6 +712,7 @@ input:checked + .darkLabel{
 
     .search{
         margin-left: 515px; 
+        padding-top: 9px;
     }
 
     .rectangle{
@@ -791,8 +796,15 @@ input:checked + .darkLabel{
 
 @media (max-width: 426px) {
 
+    #header > *{
+        grid-row-start: 1;
+        grid-column-start: 1;
+    }
+
     #header{
-        width: 768px;
+        grid-template-rows: 181px;
+        grid-template-columns: 425px;
+
     }
 
     #page{
@@ -800,61 +812,89 @@ input:checked + .darkLabel{
     }
 
     #header > img:nth-child(1){
-        width: 162px;
-        margin-top: 30px;
-        margin-left: 15px;
+        margin-top: 35px;
+        margin-left: 10px;
         
     }
 
     #header > img:nth-child(6){
-        width: 162px;
-        margin-top: 21px;
-        margin-left: 15px;
+        margin-top: 27px;
+        margin-left: 10px;
     }
 
     .slogan{
         display: block;
-        font-size: 11px;
-        line-height: 20px;
-        margin-top: 36px;
-        margin-left: 190px;
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 41px;
+        margin-left: 240px;
         width: 170px;
     }
 
     .inputValid{
-        width: 200px;
-        margin-left: 85px;
-        margin-top: 200px; 
+        width: 173px;
+        margin-left: 20px;
+        margin-bottom: 0px;
+        margin-top: 140px;
     }
 
     .search{
-        margin-left: 515px; 
+        margin-top: 140px;
+        margin-left: 230px; 
+        margin-bottom: 0px;
+        z-index: 1;
     }
 
     .rectangle{
-        margin-left: 610px;
+        margin-top: 150px;
+        margin-left: 305px;
+        z-index: 1;
     }
 
     #header > p:nth-child(7){
-        margin-left: 300px;
+        margin-top: 190px;
+        margin-left: 40px;
         font-size: 12px;
     }
 
     .clearGears{
-        margin-left: 690px;
+        margin-top: 128px;
+        margin-left: 360px;
     }
 
     .clearGears:hover{
-        margin-left: 690px;
+        margin-top: 128px;
+        margin-left: 360px;
     }
 
-    label{
-        width: 150px;
+    #page{
+        position: absolute;
+    }
+
+    #definition{
+        height: 500px;
+        overflow: auto;
+    }
+
+    #buttonRow {
+        margin: 0;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+      
+    }
+
+    .button > label{
+        width: 106.3px;
         font-size: 18px;
+        border-radius: 0;
+        border-top: solid 1px;
+        border-right: solid 1px;
+        line-height: 50px;
     }
 
     .line{
-        width: 700px;
+        display: none;
     }
 
     #mot > p:nth-child(1){
@@ -908,5 +948,4 @@ input:checked + .darkLabel{
         font-size: 18px;
         line-height: 20px;
     }
-
 }
