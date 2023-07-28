@@ -669,6 +669,7 @@ input:checked + .darkLabel{
     
     #blackline{
         width: 800px;
+        margin-left: 25px;
     }
 
     .flex > .text {
@@ -817,8 +818,6 @@ input:checked + .darkLabel{
        
     }
 
-   
-
     #header > img:nth-child(1){
         margin-top: 35px;
         margin-left: 10px;
@@ -876,6 +875,7 @@ input:checked + .darkLabel{
     }
 
     #page{
+        width: 410px;
         position: absolute;
     }
 
@@ -890,7 +890,7 @@ input:checked + .darkLabel{
     }
 
     .button > label{
-        width: 106.3px;
+        width: 105px;
         font-size: 18px;
         border-radius: 0;
         border-top: solid 1px;
@@ -903,29 +903,61 @@ input:checked + .darkLabel{
         display: none;
     }
 
+    #mot{
+        width: 410px;
+    }
+
     #mot > p:nth-child(1){
-        font-size: 30px;
+        font-size: 18px;
         margin-top: 30px;
+        margin-left: 30px;
     }
     #mot > p:nth-child(2){
-        font-size: 20px;
+        font-size: 12px;
         margin-top: 51px;
+        margin-left: 10px;
     }
     #mot > p:nth-child(3){
-        font-size: 20px;
+        font-size: 12px;
         margin-top: 51px;
+        margin-left: 10px;
     }
 
     #mot > img:nth-child(4){
         margin-top: 46px;
+        margin-left: 10px;
     }
 
     #blackline{
-        width: 620px;
+        width: 360px;
+        margin-left: 20px;
+    }
+
+    .blackcircle{
+        min-width: 12px;
+        height: 12px;
     }
 
     .flex > .text {
-        width: 590px;
+        width: 318px;
+        font-size: 12px;
+        margin-left: 12px;
+    }
+
+    .flex {
+        width: 350px;
+        margin-left: 28px;
+       
+    }
+
+    .flexRow{
+        width: 200px;
+        display: block;
+    }
+
+    #synonyms, #antonyms{
+        width: 400px;
+        display: flex;
     }
 
     .flexRow > .flex{
@@ -933,6 +965,7 @@ input:checked + .darkLabel{
     }
 
     .flexRow > .flex > p{
+        width: 200px;
         font-size: 14px;
         line-height: 34px;  
     }

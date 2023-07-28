@@ -1,3 +1,4 @@
+
 const def = document.querySelectorAll('#definition > .flex > p');
 const exemple = document.querySelectorAll('#examples > .flex > p');
 const synonym = document.querySelectorAll('#synonyms > .flexRow > .flex > p');
@@ -53,6 +54,10 @@ const labelModal3 = document.querySelector('.modalContent > .buttonModal:nth-chi
 const inputModal3 = document.querySelector('.modalContent > .buttonModal:nth-child(4) > input'); 
 
 const buttonRow = document.querySelector('#buttonRow'); 
+
+console.dir(buttonRow); 
+
+
 
 
 
@@ -324,6 +329,13 @@ searchWen.addEventListener('click', searchButton);
 
 
 function change(){
+
+    const positionButtonRow = window.getComputedStyle(buttonRow).getPropertyValue('position');  
+    
+    console.log(mediaQuery); 
+
+   
+
     if(value_1.checked == true || value_2.checked == true || value_3.checked == true || value_4.checked == true){
         if(mot.style.display == 'flex'){
 
@@ -343,9 +355,14 @@ function change(){
                 examples.style.display = 'block'; 
             }
 
-            if(value_3.checked == true){
-
-                synonyms.style.display = 'block'; 
+            if(value_3.checked == true && positionButtonRow === 'fixed'){
+                console.log('ça flex');
+                console.log(positionButtonRow);
+                synonyms.style.display = 'flex'; 
+            } else if (value_3.checked == true && positionButtonRow === 'static'){
+                console.log('ça block mec');
+                console.log(positionButtonRow);
+                synonyms.style.display = 'block';
             }
 
             if(value_4.checked == true){
@@ -357,6 +374,32 @@ function change(){
     }
 
 buttonRow.addEventListener('click', change); 
+
+
+// la fonction mediaQueryChange sert à changer la dispostion des flexRow dans synonyms et antonyms si le mediaquery est au dessus ou en dessous de 426px, le addEventlistener detecteras si le media query change et appliquera la fonction
+
+
+const mediaQuery = window.matchMedia('(max-width: 426px)');
+
+
+
+
+function mediaQueryChange(event) {
+    if (value_3.checked == true && event.matches) {
+      // Le MediaQuery correspond à la condition spécifiée (max-width: 425px)
+      synonyms.style.display = 'flex'; 
+      console.log(event.matches); 
+    } else if(value_3.checked == true && event.matches == false) {
+      // Le MediaQuery ne correspond pas à la condition spécifiée
+      synonyms.style.display = 'block'; 
+    } else if (value_4.checked == true && event.matches){
+        antonyms.style.display = 'flex'; 
+    } else if(value_4.checked == true && event.matches == false) {
+        // Le MediaQuery ne correspond pas à la condition spécifiée
+        antonyms.style.display = 'block'; 
+      }
+}
+    mediaQuery.addEventListener('change', mediaQueryChange);
 
 function darkModeImg(){
     if(rectangle.classList.value == 'rectangle'){
@@ -446,7 +489,7 @@ document.addEventListener('keydown', (event) =>{
     }
   })
 
-  
+
 window.addEventListener('click', (event) =>{
     if(event.target == inputModal1){
         document.body.style.fontFamily = 'Merriweather Sans, sans-serif';
