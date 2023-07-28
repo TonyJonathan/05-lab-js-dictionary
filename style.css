@@ -692,6 +692,10 @@ input:checked + .darkLabel{
         width: 768px;
     }
 
+    .container{
+        
+    }
+
     #page{
         width: 620px;
     }
@@ -796,6 +800,7 @@ input:checked + .darkLabel{
 
 @media (max-width: 426px) {
 
+
     #header > *{
         grid-row-start: 1;
         grid-column-start: 1;
@@ -804,12 +809,15 @@ input:checked + .darkLabel{
     #header{
         grid-template-rows: 181px;
         grid-template-columns: 425px;
-
+        width: 414px;
     }
 
     #page{
         width: 620px;
+       
     }
+
+   
 
     #header > img:nth-child(1){
         margin-top: 35px;
@@ -871,16 +879,13 @@ input:checked + .darkLabel{
         position: absolute;
     }
 
-    #definition{
-        height: 500px;
-        overflow: auto;
-    }
 
     #buttonRow {
         margin: 0;
         position: fixed;
-        bottom: 0;
+        /* top: 605px; */
         left: 0;
+        bottom: 0;
       
     }
 
@@ -891,6 +896,7 @@ input:checked + .darkLabel{
         border-top: solid 1px;
         border-right: solid 1px;
         line-height: 50px;
+        opacity: 1;
     }
 
     .line{

@@ -52,6 +52,8 @@ const inputModal2 = document.querySelector('.modalContent > .buttonModal:nth-chi
 const labelModal3 = document.querySelector('.modalContent > .buttonModal:nth-child(4) > label'); 
 const inputModal3 = document.querySelector('.modalContent > .buttonModal:nth-child(4) > input'); 
 
+const buttonRow = document.querySelector('#buttonRow'); 
+
 
 
 
@@ -458,5 +460,39 @@ window.addEventListener('click', (event) =>{
 });
 
 inputModal1.click(); 
+
+
+// window.addEventListener('scroll', scrollIsUseless);
+
+
+// function scrollIsUseless() {
+  
+//     console.log('yo ça défile ou quoi ?'); 
+//     var scrollDistance = window.scrollY;
+//     console.log(scrollDistance);
+//     buttonRow.style.bottom =  scrollDistance + 'px';
+//   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // 9f0476
