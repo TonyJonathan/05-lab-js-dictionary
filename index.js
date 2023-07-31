@@ -136,7 +136,7 @@ function searchButton(){
     .then(response => {
         // Gérer la réponse du serveur
         if(!response.ok){
-            errorMessage.textContent = 'Your word is unvalid, please try again'; 
+            errorMessage.textContent = 'Your word is unvalid'; 
             mot.style.display = 'none'; 
             blackline.hidden =true;
         } 

@@ -350,6 +350,7 @@ input:checked +label{
     font-weight: 500;
     margin: 0;
     margin-left: 24px;
+    text-align: justify;
 }
 
 .text{
@@ -604,7 +605,6 @@ input:checked + .darkLabel{
 .darkModalContent{
     background-color: #363636;
 }
-
 
 
 @media (max-width: 1025px) {
@@ -883,22 +883,29 @@ input:checked + .darkLabel{
     #buttonRow {
         margin: 0;
         position: fixed;
-        /* top: 605px; */
         left: 0;
         bottom: 0;
-      
     }
 
     .button > label{
         width: 105px;
-        font-size: 18px;
+        font-size: 14px;
         border-radius: 0;
         border-top: solid 1px;
         border-right: solid 1px;
         line-height: 50px;
         opacity: 1;
+        background-color: #909090;
+        transition: background-color 1s;
+        padding-top: 7px;
+        padding-bottom: 6px;
     }
 
+     .button > .darkLabel{
+        background-color: #707070;
+        transition: background-color 1s;
+    }
+    
     .line{
         display: none;
     }
@@ -971,20 +978,133 @@ input:checked + .darkLabel{
     }
 
     .modalContent {
-        max-width:250px;
+        max-width:150px;
+        padding-left: 25px;
+        padding-bottom: 15px;
     }
     
     .modalContent > img{
-        margin-left: 210px;
+        width: 20px;
+        height: 20px;
+        margin-left: 120px;
     }
     
     .modalContent > img:hover{
-        margin-left: 210px;  
+        margin-left: 120px;  
     }
      
-    .buttonModal > label {
-        width: 200px;
-        font-size: 18px;
-        line-height: 20px;
+    .modalContent > .buttonModal > label {
+        width: 120px;
+        font-size: 16px;
+        line-height: 15px;
+        margin-bottom: 15px;
     }
+
+}
+
+
+@media (max-width: 375px) {
+    #header{
+        grid-template-rows: 181px;
+        grid-template-columns: 375px;
+        width: 370px;
+    }
+
+    #header > img:nth-child(1){
+        width: 170px;
+        margin-top: 35px;
+        margin-left: 4px;
+        
+    }
+
+    #header > img:nth-child(6){
+        width: 170px;
+        margin-top: 27px;
+        margin-left: 4px;
+    }
+
+    .slogan{
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 41px;
+        margin-left: 185px;
+        width: 170px;
+    }
+
+    .inputValid{
+        width: 138px;
+        margin-left: 14px;
+        margin-bottom: 0px;
+        margin-top: 140px;
+        padding-left: 22px;
+    }
+
+    .search{
+        margin-top: 140px;
+        margin-left: 179px; 
+    }
+
+    .rectangle{
+        margin-left: 257px;
+    }
+
+    .clearGears{
+        margin-left: 312px;
+    }
+
+    .clearGears:hover{
+        margin-left: 312px;
+    }
+
+    #header > p:nth-child(7){
+        margin-left: 31px;
+    }
+
+    #page{
+        width: 0px;
+    }
+
+
+    .button > label{
+        width: 93px;
+        font-size: 13px;
+    }
+
+     .button > .darkLabel{
+        background-color: #707070;
+        transition: background-color 1s;
+    }
+
+    #mot{
+        width: 374px;
+    }
+
+    #blackline{
+        width: 330px;
+        margin-left: 14px;
+    }
+
+    #synonyms, #antonyms{
+        width: 370px;
+    }
+
+    .flex {
+        width: 320px;
+        margin-left: 16px;
+    }
+
+    .flex > .text {
+        width: 300px;
+        font-size: 12px;
+        margin-left: 12px;
+    }
+
+    .flexRow {
+        width: 185px;
+    }
+}
+
+
+@media (min-width: 2559px) {
+
 }
