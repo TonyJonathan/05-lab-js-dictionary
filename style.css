@@ -1106,5 +1106,84 @@ input:checked + .darkLabel{
 
 
 @media (min-width: 2559px) {
+    #header{
+        width: 2560px;
+        grid-template-rows: 141px;
+        grid-template-columns: 2560px;
+    }
 
+    #header > img:nth-child(1){
+        margin-top: 77px;
+        margin-left: 90px;
+    }
+    
+    #header > img:nth-child(6){
+        margin-top: 68px;
+        margin-left: 90px;
+    }
+    
+    .rectangle{
+        width: 92px;
+        max-height: 44px;
+        margin-top: 80px;
+        margin-left: 505px; 
+        border-radius: 22px;
+    }
+    
+    .circle{
+        width: 32px;
+        height: 32px;
+        margin-top: 6px;
+        margin-left: 6px;
+        border-radius: 16px;
+    }
+    
+    .inputValid{
+        width: 623px;
+        border-radius: 32px 0px 0px 32px;
+        padding-top: 32px;
+        padding-bottom: 32px;
+        padding-left: 32px;
+        margin-top: 72px;
+        margin-bottom: 29px;
+        margin-left: 728px; 
+    }
+
+.search{
+    width: 35px;
+    border-radius: 0px 45px 45px 0px;
+    padding-top: 23px;
+    padding-bottom: 43px;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-top: 72px;
+    margin-bottom: 29px;
+    margin-left: 836px; 
+    
+}
+
+.slogan{
+    width: 990px;
+    font-size: 30px;
+    margin-top: 85px;
+    margin-left: 1490px; 
+}
+
+#header > p:nth-child(7){
+    width: 400px;
+    margin-left: 510px;
+    margin-top: 118px;
+    font-size: 16px;
+}
+
+.clearGears{
+    width: max-content;
+    margin-top: 60px;
+    margin-left: 2450px;
+}
+
+.clearGears:hover{
+    margin-top: 60px;
+    margin-left: 2450px;
+}
 }
