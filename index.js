@@ -55,13 +55,6 @@ const inputModal3 = document.querySelector('.modalContent > .buttonModal:nth-chi
 
 const buttonRow = document.querySelector('#buttonRow'); 
 
-console.dir(buttonRow); 
-
-
-
-
-
-
 mot.style.display = 'none'; 
 blackline.hidden =true; 
 definition.style.display = 'none'; 
@@ -121,11 +114,11 @@ function clear (i){
 
 function searchButton(){
     if(searchBar.value != ""){
-
     definition.style.display = 'none'; 
     examples.style.display = 'none'; 
     synonyms.style.display = 'none'; 
     antonyms.style.display = 'none'; 
+    soundLogo.hidden = true; 
      
     var url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + searchBar.value;
 
@@ -147,7 +140,6 @@ function searchButton(){
             mot.style.display = 'none'; 
             blackline.hidden =true;
         } 
-
         
         if (response.ok) {
             mot.style.display = 'flex'; 
@@ -166,6 +158,10 @@ function searchButton(){
         const lienAudioURL = lienAudio.textContent;
         const audioPlayer = document.querySelector('#audioPlayer');
 
+        if(lienAudioURL != ""){
+            soundLogo.hidden = false;
+        }
+
         soundLogo.addEventListener('click', () =>{
 
             audioPlayer.src = lienAudioURL;
@@ -179,7 +175,7 @@ function searchButton(){
         let tableauAntonym = findAntonyms(data[0].meanings[0].definitions); 
 
         // trouve tous les exemples dans les .definitions sans afficher les vides //
-        
+   
         function findExample(i){       
             var examplesResult = [];    
             i.forEach(element => {
@@ -298,8 +294,6 @@ function searchButton(){
 
     })
 
-
-
     if(value_1.checked == true){
 
         definition.style.display = 'block'; 
@@ -331,10 +325,6 @@ searchWen.addEventListener('click', searchButton);
 function change(){
 
     const positionButtonRow = window.getComputedStyle(buttonRow).getPropertyValue('position');  
-    
-    console.log(mediaQuery); 
-
-   
 
     if(value_1.checked == true || value_2.checked == true || value_3.checked == true || value_4.checked == true){
         if(mot.style.display == 'flex'){
@@ -344,7 +334,6 @@ function change(){
             synonyms.style.display = 'none'; 
             antonyms.style.display = 'none'; 
 
-        
             if(value_1.checked == true){
 
                 definition.style.display = 'block'; 
@@ -356,18 +345,17 @@ function change(){
             }
 
             if(value_3.checked == true && positionButtonRow === 'fixed'){
-                console.log('ça flex');
-                console.log(positionButtonRow);
                 synonyms.style.display = 'flex'; 
             } else if (value_3.checked == true && positionButtonRow === 'static'){
-                console.log('ça block mec');
-                console.log(positionButtonRow);
+
                 synonyms.style.display = 'block';
             }
 
-            if(value_4.checked == true){
+            if(value_4.checked == true && positionButtonRow === 'fixed'){
+                antonyms.style.display = 'flex'; 
+            } else if (value_4.checked == true && positionButtonRow === 'static'){
 
-                antonyms.style.display = 'block'; 
+                antonyms.style.display = 'block';
             }
         }
         }
@@ -380,8 +368,6 @@ buttonRow.addEventListener('click', change);
 
 
 const mediaQuery = window.matchMedia('(max-width: 426px)');
-
-
 
 
 function mediaQueryChange(event) {
