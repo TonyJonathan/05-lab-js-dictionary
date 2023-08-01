@@ -11,13 +11,10 @@ const exampleCircle = document.querySelectorAll('#examples > .flex > .blackcircl
 const synonymCircle = document.querySelectorAll('#synonyms > .flexRow > .flex > .blackcircle');
 const antonymCircle = document.querySelectorAll('#antonyms > .flexRow > .flex > .blackcircle');
 
-
 const word = document.querySelector('#mot > p:nth-child(1)'); 
 const phonetics = document.querySelector('#mot > p:nth-child(2)');
 const partOfSpeech = document.querySelector('#mot > p:nth-child(3)');
 const lienAudio = document.querySelector('#header > p:nth-child(8)');
-
-
 
 const container = document.querySelector('.container');
 const logo = document.querySelector('#header > img:nth-child(1)');
@@ -39,9 +36,6 @@ const soundLogo = document.querySelector('#mot > img:nth-child(4)');
 const darkBullet = document.querySelectorAll('.blackcircle, #blackline'); 
 const darkResponse = document.querySelectorAll('.text, .textTitle');
 
-
-
-
 const firstDef = document.querySelector('#definition > .flex > p:nth-child(2)')
 
 const modal = document.querySelector('.modal'); 
@@ -55,12 +49,17 @@ const inputModal3 = document.querySelector('.modalContent > .buttonModal:nth-chi
 
 const buttonRow = document.querySelector('#buttonRow'); 
 
-mot.style.display = 'none'; 
+const positionButtonRow = window.getComputedStyle(buttonRow).getPropertyValue('position');
+
+function hide(...arg){
+    arg.forEach(element => {
+        element.style.display= 'none';
+    })
+}
+
+hide(mot, definition, examples, synonyms, antonyms); 
 blackline.hidden =true; 
-definition.style.display = 'none'; 
-examples.style.display = 'none'; 
-synonyms.style.display = 'none'; 
-antonyms.style.display = 'none'; 
+
 
 value_1.checked = true;
 
@@ -100,37 +99,32 @@ function convertElementInNumber(i){ // sert à savoir le nombre de définitions-
     return i;
 }
 
-function hideCircle(i){ // sert à cacher les points noirs si il n'y a pas de def-ex-anto-syn à coté// 
-    i.forEach(element =>{
-        element.style.display = "none";
+function hideElements(...args){ // sert à cacher les points noirs si il n'y a pas de def-ex-anto-syn à coté// 
+    args.forEach(element => {
+        element.forEach(sousElement => {
+            sousElement.style.display = "none"; 
+        })
     })
 }
 
-function clear (i){
-    i.forEach(element => {
-        element.textContent= ""; 
+function clear (...args){
+    args.forEach(element => {
+        element.forEach(sousElement => {
+            sousElement.textContent= "" ; 
+        })
+        
     })
 }
 
 function searchButton(){
     if(searchBar.value != ""){
-    definition.style.display = 'none'; 
-    examples.style.display = 'none'; 
-    synonyms.style.display = 'none'; 
-    antonyms.style.display = 'none'; 
-    soundLogo.hidden = true; 
      
     var url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + searchBar.value;
 
-    hideCircle(defCircle);
-    hideCircle(exampleCircle);
-    hideCircle(synonymCircle);
-    hideCircle(antonymCircle);
-
-    clear(def);
-    clear(exemple);
-    clear(synonym);
-    clear(antonym);
+    hide(definition, examples, synonyms, antonyms);
+    hideElements(defCircle, exampleCircle, synonymCircle, antonymCircle)
+    clear(def, exemple, synonym, antonym);
+    soundLogo.hidden = true;
 
     fetch(url)
     .then(response => {
@@ -304,14 +298,18 @@ function searchButton(){
         examples.style.display = 'block'; 
     }
 
-    if(value_3.checked == true){
+    if(value_3.checked == true && positionButtonRow === 'fixed'){
+        synonyms.style.display = 'flex'; 
+    } else if (value_3.checked == true && positionButtonRow === 'static'){
 
-        synonyms.style.display = 'block'; 
+        synonyms.style.display = 'block';
     }
 
-    if(value_4.checked == true){
+    if(value_4.checked == true && positionButtonRow === 'fixed'){
+        antonyms.style.display = 'flex'; 
+    } else if (value_4.checked == true && positionButtonRow === 'static'){
 
-        antonyms.style.display = 'block'; 
+        antonyms.style.display = 'block';
     }
    
     } else {
@@ -324,7 +322,7 @@ searchWen.addEventListener('click', searchButton);
 
 function change(){
 
-    const positionButtonRow = window.getComputedStyle(buttonRow).getPropertyValue('position');  
+      
 
     if(value_1.checked == true || value_2.checked == true || value_3.checked == true || value_4.checked == true){
         if(mot.style.display == 'flex'){
@@ -489,39 +487,3 @@ window.addEventListener('click', (event) =>{
 });
 
 inputModal1.click(); 
-
-
-// window.addEventListener('scroll', scrollIsUseless);
-
-
-// function scrollIsUseless() {
-  
-//     console.log('yo ça défile ou quoi ?'); 
-//     var scrollDistance = window.scrollY;
-//     console.log(scrollDistance);
-//     buttonRow.style.bottom =  scrollDistance + 'px';
-//   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 9f0476
