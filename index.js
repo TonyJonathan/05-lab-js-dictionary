@@ -1,10 +1,12 @@
+import { hide, hideElements, clear } from "./function_js/hideAndClear.js";
+import { findExample, findSynonyms, findAntonyms, addInfo, convertElementInNumber } from "./function_js/searchAndAdvertise.js";
 
 const def = document.querySelectorAll('#definition > .flex > p');
 const exemple = document.querySelectorAll('#examples > .flex > p');
 const synonym = document.querySelectorAll('#synonyms > .flexRow > .flex > p');
 const antonym = document.querySelectorAll('#antonyms > .flexRow > .flex > p');
 const errorMessage = document.querySelector('#header > p:nth-child(7)'); 
-const synonymsAndAntonyms = document.querySelectorAll('#synonyms > .flexRow > .flex > p, #antonyms > .flexRow > .flex > p')
+const synonymsAndAntonyms = document.querySelectorAll('#synonyms > .flexRow > .flex > p, #antonyms > .flexRow > .flex > p');
 
 const defCircle = document.querySelectorAll('#definition > .flex > .blackcircle');
 const exampleCircle = document.querySelectorAll('#examples > .flex > .blackcircle');
@@ -36,8 +38,6 @@ const soundLogo = document.querySelector('#mot > img:nth-child(4)');
 const darkBullet = document.querySelectorAll('.blackcircle, #blackline'); 
 const darkResponse = document.querySelectorAll('.text, .textTitle');
 
-const firstDef = document.querySelector('#definition > .flex > p:nth-child(2)')
-
 const modal = document.querySelector('.modal'); 
 const modalContent = document.querySelector('.modalContent'); 
 const labelModal1 = document.querySelector('.modalContent > .buttonModal:nth-child(2) > label'); 
@@ -51,80 +51,19 @@ const buttonRow = document.querySelector('#buttonRow');
 
 const positionButtonRow = window.getComputedStyle(buttonRow).getPropertyValue('position');
 
-function hide(...arg){
-    arg.forEach(element => {
-        element.style.display= 'none';
-    })
-}
-
 hide(mot, definition, examples, synonyms, antonyms); 
+
 blackline.hidden =true; 
-
-
 value_1.checked = true;
-
-function addInfo(a, b){ // sert a ajouter les definition-exemples... si il y'en a sinon affiche ""// 
-    
-    if(typeof(b) == "string"){
-        a.textContent = b;
-        return a;
-    } else {
-        a.textContent = ""; 
-        return a;
-    }
-}
-
- 
-
-function convertElementInNumber(i){ // sert à savoir le nombre de définitions-exemples... pour pouvoir ajouter les ajouter// 
-
-    if(i.length == 1){
-        i = [0]; 
-    }else if(i.length == 2){
-        i = [0, 1]; 
-    }else if(i.length == 3){
-        i = [0, 1, 2]; 
-    }else if(i.length == 4){
-        i = [0, 1, 2, 3]; 
-    }else if(i.length == 5){
-        i = [0, 1, 2, 3, 4]; 
-    }else if(i.length == 6){
-        i = [0, 1, 2, 3, 4, 5]; 
-    }else if(i.length == 7){
-        i = [0, 1, 2, 3, 4, 5, 6]; 
-    }else if(i.length >= 8){
-        i = [0, 1, 2, 3, 4, 5, 6, 7]; 
-    }
-
-    return i;
-}
-
-function hideElements(...args){ // sert à cacher les points noirs si il n'y a pas de def-ex-anto-syn à coté// 
-    args.forEach(element => {
-        element.forEach(sousElement => {
-            sousElement.style.display = "none"; 
-        })
-    })
-}
-
-function clear (...args){
-    args.forEach(element => {
-        element.forEach(sousElement => {
-            sousElement.textContent= "" ; 
-        })
-        
-    })
-}
 
 function searchButton(){
     if(searchBar.value != ""){
-     
-    var url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + searchBar.value;
 
     hide(definition, examples, synonyms, antonyms);
     hideElements(defCircle, exampleCircle, synonymCircle, antonymCircle)
     clear(def, exemple, synonym, antonym);
     soundLogo.hidden = true;
+    var url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + searchBar.value;
 
     fetch(url)
     .then(response => {
@@ -167,55 +106,6 @@ function searchButton(){
         let tableauExample = findExample(data[0].meanings[0].definitions); 
         let tableauSynonym = findSynonyms(data[0].meanings[0].definitions); 
         let tableauAntonym = findAntonyms(data[0].meanings[0].definitions); 
-
-        // trouve tous les exemples dans les .definitions sans afficher les vides //
-   
-        function findExample(i){       
-            var examplesResult = [];    
-            i.forEach(element => {
-                if(element.example != undefined ){
-                    examplesResult.push(element.example);
-                }
-            });
-
-            return examplesResult; 
-            
-        }
-
-        // pour les synonymes// 
-
-        function findSynonyms(i){   
-
-            let synonymResult = [];    
-            i.forEach(element => {
-                if(element.synonyms != "" ){
-
-                    element.synonyms.forEach(sousElement => {
-                        synonymResult.push(sousElement);
-                    });
-                    
-                }
-            });
-
-            return synonymResult; 
-        }
-
-        // pour les antonymes// 
-
-        function findAntonyms(i){     
-            let antonymResult = [];    
-            i.forEach(element => {
-                if(element.antonyms != "" ){
-
-                    element.antonyms.forEach(sousElement => {
-                        antonymResult.push(sousElement);
-                    });
-                    
-                }
-            });
-
-            return antonymResult; 
-        }
 
         findExample(data[0].meanings[0].definitions); 
         findSynonyms(data[0].meanings[0].definitions);
