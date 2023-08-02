@@ -1,5 +1,7 @@
 import { hide, hideElements, clear } from "./function_js/hideAndClear.js";
 import { findExample, findSynonyms, findAntonyms, addInfo, convertElementInNumber } from "./function_js/searchAndAdvertise.js";
+import { change, mediaQueryChange } from "./function_js/change.js";
+import { darkMode } from "./function_js/darkMode.js";
 
 const def = document.querySelectorAll('#definition > .flex > p');
 const exemple = document.querySelectorAll('#examples > .flex > p');
@@ -59,264 +61,143 @@ value_1.checked = true;
 function searchButton(){
     if(searchBar.value != ""){
 
-    hide(definition, examples, synonyms, antonyms);
-    hideElements(defCircle, exampleCircle, synonymCircle, antonymCircle)
-    clear(def, exemple, synonym, antonym);
-    soundLogo.hidden = true;
-    var url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + searchBar.value;
+        hide(definition, examples, synonyms, antonyms);
+        hideElements(defCircle, exampleCircle, synonymCircle, antonymCircle)
+        clear(def, exemple, synonym, antonym);
+        soundLogo.hidden = true;
+        var url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + searchBar.value;
 
-    fetch(url)
-    .then(response => {
-        // Gérer la réponse du serveur
-        if(!response.ok){
-            errorMessage.textContent = 'Your word is unvalid'; 
-            mot.style.display = 'none'; 
-            blackline.hidden =true;
-        } 
-        
-        if (response.ok) {
-            mot.style.display = 'flex'; 
-            blackline.hidden =false;
-            errorMessage.textContent = ''; 
-            return response.json(); // Convertir la réponse en JSON
-        } 
-    })
+        fetch(url)
+        .then(response => {
+            // Gérer la réponse du serveur
+            if(!response.ok){
+                errorMessage.textContent = 'Your word is unvalid'; 
+                mot.style.display = 'none'; 
+                blackline.hidden =true;
+            } 
+            
+            if (response.ok) {
+                mot.style.display = 'flex'; 
+                blackline.hidden =false;
+                errorMessage.textContent = ''; 
+                return response.json(); // Convertir la réponse en JSON
+            } 
+        })
+           
+        .then(data => {
+            
+            word.textContent= data[0].word; 
+            phonetics.textContent = data[0].phonetic; 
+            partOfSpeech.textContent = data[0].meanings[0].partOfSpeech; 
+            lienAudio.textContent = data[0].phonetics[0].audio; 
+            const lienAudioURL = lienAudio.textContent;
+            const audioPlayer = document.querySelector('#audioPlayer');
 
-    .then(data => {
-        
-        word.textContent= data[0].word; 
-        phonetics.textContent = data[0].phonetic; 
-        partOfSpeech.textContent = data[0].meanings[0].partOfSpeech; 
-        lienAudio.textContent = data[0].phonetics[0].audio; 
-        const lienAudioURL = lienAudio.textContent;
-        const audioPlayer = document.querySelector('#audioPlayer');
-
-        if(lienAudioURL != ""){
-            soundLogo.hidden = false;
-        }
-
-        soundLogo.addEventListener('click', () =>{
-
-            audioPlayer.src = lienAudioURL;
-            audioPlayer.load();
-            audioPlayer.play(); 
-        }); 
-
-        let tableauDef = data[0].meanings[0].definitions; 
-        let tableauExample = findExample(data[0].meanings[0].definitions); 
-        let tableauSynonym = findSynonyms(data[0].meanings[0].definitions); 
-        let tableauAntonym = findAntonyms(data[0].meanings[0].definitions); 
-
-        findExample(data[0].meanings[0].definitions); 
-        findSynonyms(data[0].meanings[0].definitions);
-        findAntonyms(data[0].meanings[0].definitions);  
-
-
-        // la fonction retrieve est composée de sous-fonctions qui permettent d'aller rechercher dans la data de l'API les informations concernant les def-ex-syn-ant et de les ajouter au bon endroit en fonction de leurs nombres et de la fonction convertElementInNumber, elle permet aussi de transformer en "" les p qui ne sont pas concernés et leurs points. // 
-
-        function retrieve(w, x, y, z){
-
-            function showDefinitions(a){
-                let defSlot = eval('def[' + a + ']'); // correspond à la partie html
-                let defNumber = eval('data[0].meanings[0].definitions['+ a +'].definition'); // correspond a la partie data récupérée 
-                let defCircleNumber = eval('defCircle[' + a + ']'); 
-
-                defSlot.textContent = "";
-                addInfo(defSlot, defNumber);
-                defCircleNumber.style.display = 'block'; 
+            if(lienAudioURL != ""){
+                soundLogo.hidden = false;
             }
 
-            function showExamples(a){
-                let exampleSlot = eval('exemple[' + a + ']');
-                let exampleNumber = eval('tableauExample['+ a +']');
-                let exampleCircleNumber = eval('exampleCircle[' + a + ']'); 
+            soundLogo.addEventListener('click', () =>{
 
-                exampleSlot.textContent = "";
-                addInfo(exampleSlot, exampleNumber);
-                exampleCircleNumber.style.display = 'block'; 
+                audioPlayer.src = lienAudioURL;
+                audioPlayer.load();
+                audioPlayer.play(); 
+            }); 
+
+            let tableauDef = data[0].meanings[0].definitions; 
+            let tableauExample = findExample(data[0].meanings[0].definitions); 
+            let tableauSynonym = findSynonyms(data[0].meanings[0].definitions); 
+            let tableauAntonym = findAntonyms(data[0].meanings[0].definitions); 
+
+            findExample(data[0].meanings[0].definitions); 
+            findSynonyms(data[0].meanings[0].definitions);
+            findAntonyms(data[0].meanings[0].definitions);  
+
+
+            // la fonction retrieve est composée de sous-fonctions qui permettent d'aller rechercher dans la data de l'API les informations concernant les def-ex-syn-ant et de les ajouter au bon endroit en fonction de leurs nombres et de la fonction convertElementInNumber, elle permet aussi de transformer en "" les p qui ne sont pas concernés et leurs points. // 
+
+            function retrieve(w, x, y, z){
+
+                function showDefinitions(a){
+                    let defSlot = eval('def[' + a + ']'); // correspond à la partie html
+                    let defNumber = eval('data[0].meanings[0].definitions['+ a +'].definition'); // correspond a la partie data récupérée 
+                    let defCircleNumber = eval('defCircle[' + a + ']'); 
+
+                    defSlot.textContent = "";
+                    addInfo(defSlot, defNumber);
+                    defCircleNumber.style.display = 'block'; 
+                }
+
+                function showExamples(a){
+                    let exampleSlot = eval('exemple[' + a + ']');
+                    let exampleNumber = eval('tableauExample['+ a +']');
+                    let exampleCircleNumber = eval('exampleCircle[' + a + ']'); 
+
+                    exampleSlot.textContent = "";
+                    addInfo(exampleSlot, exampleNumber);
+                    exampleCircleNumber.style.display = 'block'; 
+                }
+
+                function showSynonyms(a){
+                    let synonymSlot = eval('synonym[' + a + ']');
+                    let synonymNumber = eval('tableauSynonym['+ a +']');
+                    let synonymCircleNumber = eval('synonymCircle[' + a + ']'); 
+
+                    synonymSlot.textContent = "";
+                    addInfo(synonymSlot, synonymNumber);
+                    synonymCircleNumber.style.display = 'block'; 
+                }
+
+                function showAntonyms(a){
+                    let antonymSlot = eval('antonym[' + a + ']');
+                    let antonymNumber = eval('tableauAntonym['+ a +']');
+                    let antonymCircleNumber = eval('antonymCircle[' + a + ']'); 
+
+                    antonymSlot.textContent = "";
+                    addInfo(antonymSlot, antonymNumber);
+                    antonymCircleNumber.style.display = 'block';  
+                }
+            
+                w.forEach(element => {
+                    showDefinitions(element);
+                });
+
+                x.forEach(element => {
+                    showExamples(element);
+                });
+
+                y.forEach(element => {
+                    showSynonyms(element);
+                });
+
+                z.forEach(element => {
+                    showAntonyms(element);
+                });
+            
             }
 
-            function showSynonyms(a){
-                let synonymSlot = eval('synonym[' + a + ']');
-                let synonymNumber = eval('tableauSynonym['+ a +']');
-                let synonymCircleNumber = eval('synonymCircle[' + a + ']'); 
+            retrieve(convertElementInNumber(tableauDef), convertElementInNumber(tableauExample), convertElementInNumber(tableauSynonym), convertElementInNumber(tableauAntonym)); 
 
-                synonymSlot.textContent = "";
-                addInfo(synonymSlot, synonymNumber);
-                synonymCircleNumber.style.display = 'block'; 
-            }
+        })
 
-            function showAntonyms(a){
-                let antonymSlot = eval('antonym[' + a + ']');
-                let antonymNumber = eval('tableauAntonym['+ a +']');
-                let antonymCircleNumber = eval('antonymCircle[' + a + ']'); 
-
-                antonymSlot.textContent = "";
-                addInfo(antonymSlot, antonymNumber);
-                antonymCircleNumber.style.display = 'block';  
-            }
-        
-            w.forEach(element => {
-                showDefinitions(element);
-            });
-
-            x.forEach(element => {
-                showExamples(element);
-            });
-
-            y.forEach(element => {
-                showSynonyms(element);
-            });
-
-            z.forEach(element => {
-                showAntonyms(element);
-            });
-        
-        }
-
-        retrieve(convertElementInNumber(tableauDef), convertElementInNumber(tableauExample), convertElementInNumber(tableauSynonym), convertElementInNumber(tableauAntonym)); 
-
-    })
-
-    if(value_1.checked == true){
-
-        definition.style.display = 'block'; 
-    }
-
-    if(value_2.checked == true){
-
-        examples.style.display = 'block'; 
-    }
-
-    if(value_3.checked == true && positionButtonRow === 'fixed'){
-        synonyms.style.display = 'flex'; 
-    } else if (value_3.checked == true && positionButtonRow === 'static'){
-
-        synonyms.style.display = 'block';
-    }
-
-    if(value_4.checked == true && positionButtonRow === 'fixed'){
-        antonyms.style.display = 'flex'; 
-    } else if (value_4.checked == true && positionButtonRow === 'static'){
-
-        antonyms.style.display = 'block';
-    }
-   
+        mot.style.display = 'flex'; 
+        change(); 
+         
     } else {
         errorMessage.textContent = "Enter a word please"
     }
+    console.log(word.textContent);
 }
 
 searchWen.addEventListener('click', searchButton); 
 
-
-function change(){
-
-      
-
-    if(value_1.checked == true || value_2.checked == true || value_3.checked == true || value_4.checked == true){
-        if(mot.style.display == 'flex'){
-
-            definition.style.display = 'none'; 
-            examples.style.display = 'none'; 
-            synonyms.style.display = 'none'; 
-            antonyms.style.display = 'none'; 
-
-            if(value_1.checked == true){
-
-                definition.style.display = 'block'; 
-            }
-
-            if(value_2.checked == true){
-
-                examples.style.display = 'block'; 
-            }
-
-            if(value_3.checked == true && positionButtonRow === 'fixed'){
-                synonyms.style.display = 'flex'; 
-            } else if (value_3.checked == true && positionButtonRow === 'static'){
-
-                synonyms.style.display = 'block';
-            }
-
-            if(value_4.checked == true && positionButtonRow === 'fixed'){
-                antonyms.style.display = 'flex'; 
-            } else if (value_4.checked == true && positionButtonRow === 'static'){
-
-                antonyms.style.display = 'block';
-            }
-        }
-        }
-    }
-
 buttonRow.addEventListener('click', change); 
-
 
 // la fonction mediaQueryChange sert à changer la dispostion des flexRow dans synonyms et antonyms si le mediaquery est au dessus ou en dessous de 426px, le addEventlistener detecteras si le media query change et appliquera la fonction
 
-
 const mediaQuery = window.matchMedia('(max-width: 426px)');
 
-
-function mediaQueryChange(event) {
-    if (value_3.checked == true && event.matches) {
-      // Le MediaQuery correspond à la condition spécifiée (max-width: 425px)
-      synonyms.style.display = 'flex'; 
-      console.log(event.matches); 
-    } else if(value_3.checked == true && event.matches == false) {
-      // Le MediaQuery ne correspond pas à la condition spécifiée
-      synonyms.style.display = 'block'; 
-    } else if (value_4.checked == true && event.matches){
-        antonyms.style.display = 'flex'; 
-    } else if(value_4.checked == true && event.matches == false) {
-        // Le MediaQuery ne correspond pas à la condition spécifiée
-        antonyms.style.display = 'block'; 
-      }
-}
-    mediaQuery.addEventListener('change', mediaQueryChange);
-
-function darkModeImg(){
-    if(rectangle.classList.value == 'rectangle'){
-        darkBullet.forEach(element =>{
-            element.style.backgroundColor = '#2B2B2B';
-        })
-    } else {
-        darkBullet.forEach(element =>{
-            element.style.backgroundColor = '#E3E3E3';
-        })
-    }
-}
-
-function darkMode() {
-
-    container.classList.toggle('blackContainer'); 
-    rectangle.classList.toggle('darkRectangle'); 
-    circle.classList.toggle('darkCircle'); 
-    slogan.classList.toggle('darkSlogan');
-    label1.classList.toggle('darkLabel'); 
-    label2.classList.toggle('darkLabel'); 
-    label3.classList.toggle('darkLabel'); 
-    label4.classList.toggle('darkLabel'); 
-    line.classList.toggle('darkLine'); 
-    logo.classList.toggle('clearLogo');
-    darkLogo.classList.toggle('darkLogo');
-    searchBar.classList.toggle('darkSearchBar'); 
-    searchWen.classList.toggle('darkSearch'); 
-    darkWord.classList.toggle('darkWord'); 
-    gears.classList.toggle('darkGears');
-    labelModal1.classList.toggle('darkLabelModal');
-    labelModal2.classList.toggle('darkLabelModal');
-    labelModal3.classList.toggle('darkLabelModal');
-    modalContent.classList.toggle('darkModalContent'); 
-    soundLogo.classList.toggle('darkSoundLogo'); 
-
-    darkResponse.forEach(element =>{
-        element.classList.toggle('darkText'); 
-    })
-
-    darkModeImg();
-}
-
+mediaQuery.addEventListener('change', mediaQueryChange);
 rectangle.addEventListener('click', darkMode); 
 
 function eraseErrorMessage(){
@@ -332,17 +213,15 @@ document.addEventListener('keydown', (event) =>{
 });
 
   function synonymsAndAntonymsClickables(){
-    
-    synonymsAndAntonyms.forEach(element => {
-        element.addEventListener('click', () => {
-          searchBar.value = element.textContent;
-          searchButton();
-          label1.click(); 
+
+        synonymsAndAntonyms.forEach(element => {
+            element.addEventListener('click', () => {
+            searchBar.value = element.textContent;
+            searchButton();
+            label1.click(); 
+            });
         });
-      
-    });
-    
-  };
+    };
 
   document.addEventListener('click', synonymsAndAntonymsClickables);
 
@@ -377,3 +256,5 @@ window.addEventListener('click', (event) =>{
 });
 
 inputModal1.click(); 
+
+
