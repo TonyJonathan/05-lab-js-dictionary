@@ -2,8 +2,6 @@ const gears = document.querySelector('#header > img:nth-child(10)');
 
 export function change(){
 
-
-
     if(value_1.checked == true || value_2.checked == true || value_3.checked == true || value_4.checked == true){
         if(mot.style.display == 'flex'){
 
