@@ -40,6 +40,9 @@ const inputModal3 = document.querySelector('.modalContent > .buttonModal:nth-chi
 
 const buttonRow = document.querySelector('#buttonRow'); 
 
+const typewritter = document.querySelector('.typewritter > p'); 
+const cursor = document.querySelector(".cursor");
+
 hide(mot, definition, examples, synonyms, antonyms); 
 
 blackline.hidden =true; 
@@ -47,7 +50,8 @@ value_1.checked = true;
 
 function searchButton(){
     if(searchBar.value != ""){
-
+        typewritter.hidden = true;
+        cursor.style.display= 'none';  
         hide(definition, examples, synonyms, antonyms);
         hideElements(defCircle, exampleCircle, synonymCircle, antonymCircle)
         clear(def, exemple, synonym, antonym);

@@ -5,7 +5,8 @@ const circle = document.querySelector('.circle');
 const rectangle = document.querySelector('.rectangle'); 
 const searchBar = document.querySelector('.inputValid');
 const searchWen = document.querySelector('.search');
-const slogan = document.querySelector('#header > p:nth-child(5)');
+const slogan = document.querySelector('.typewritter > p:nth-child(1)');
+const cursor = document.querySelector('.cursor'); 
 const gears = document.querySelector('#header > img:nth-child(10)'); 
 
 const label1 = document.querySelector('label'); 
@@ -28,7 +29,9 @@ export function darkMode() {
     container.classList.toggle('blackContainer'); 
     rectangle.classList.toggle('darkRectangle'); 
     circle.classList.toggle('darkCircle'); 
+    slogan.classList.toggle('Slogan');
     slogan.classList.toggle('darkSlogan');
+    cursor.classList.toggle('darkCursor');
     label1.classList.toggle('darkLabel'); 
     label2.classList.toggle('darkLabel'); 
     label3.classList.toggle('darkLabel'); 

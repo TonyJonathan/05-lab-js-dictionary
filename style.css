@@ -456,6 +456,18 @@ input:checked + .darkLabel{
 }
 
 .darkSlogan{
+    grid-row-start: 1;
+    grid-column-start: 1;
+    width: 598px;
+    font-size: 26px;
+    font-weight: 700;
+    color: #FFF;
+    line-height: 27px;
+    margin: 0;
+    text-align: center;   
+    white-space: nowrap; 
+    margin-top: 103px;
+    margin-left: 300px;
     color: #108AE2;
     transition: color 1s;
 }
@@ -474,27 +486,19 @@ input:checked + .darkLabel{
     transition: color 1s;
 }
 
-
 .darkWord{
     color: var(--color-white);
     transition: color 1s;
 }
 
-
-
-
 .darkGears{
-    filter: invert(88%) sepia(0%) saturate(1972%) hue-rotate(141deg) brightness(100%) contrast(101%);
-   
+    filter: invert(88%) sepia(0%) saturate(1972%) hue-rotate(141deg) brightness(100%) contrast(101%); 
 }
-
 
 .darkGears:hover{
     filter: invert(59%) sepia(16%) saturate(1375%) hue-rotate(140deg) brightness(130%) contrast(88%);
-    opacity: 1;
-     
+    opacity: 1;  
 }
-
 
 /* modal */ 
 
@@ -607,33 +611,38 @@ input:checked + .darkLabel{
     background-color: #363636;
 }
 
-
 .typewritter{
-    display: flex;
-    align-items: center;
+    display: grid;
 }
 
-.typewritter > p{
-    
+.Slogan{
+    grid-row-start: 1;
+    grid-column-start: 1;
     width: 598px;
     font-size: 26px;
     font-weight: 700;
     color: #145462;
     line-height: 27px;
     margin: 0;
-    text-align: center;
-
-    
+    text-align: center;   
+    white-space: nowrap; 
+    margin-top: 103px;
+    margin-left: 300px;
 }
 
-#cursor{
-    font-size: 26px;
+.cursor{
+    grid-row-start: 1;
+    grid-column-start: 1;
+    font-size: 29px;
     color: #145462;
-  
-    
+    margin-top: 98px;
+    margin-left: 896px;
 }
 
-
+.darkCursor{
+    transition: color 1s;
+    color: #108AE2;
+}
 
 
 @media (min-width: 770px) and (max-width: 1025px) {
@@ -713,7 +722,23 @@ input:checked + .darkLabel{
         font-size: 18px;
         line-height: 34px;  
     }
+
+    .Slogan{
+        margin-top: 100px;
+        margin-left: 200px;
+    }
+
+    .darkSlogan{
+        margin-top: 100px;
+        margin-left: 200px;
+    }
     
+    
+    .cursor{
+        font-size: 29px;
+        margin-top: 95px;
+        margin-left: 796px;
+    }
 }
 
 @media (min-width: 427px) and (max-width: 769px) {
@@ -827,6 +852,28 @@ input:checked + .darkLabel{
         font-size: 18px;
         line-height: 20px;
     }
+
+    .Slogan{
+        width: 457px;
+        font-size: 20px;
+        margin-top: 100px;
+        margin-left: 150px;
+    }
+
+    .darkSlogan{
+        width: 457px;
+        font-size: 20px;
+        margin-top: 100px;
+        margin-left: 150px;
+    }
+    
+    .cursor{
+        font-size: 21px;
+        margin-top: 100px;
+        margin-left: 609px;
+    }
+    
+    
 }
 
 @media (min-width: 377px) and (max-width: 426px) {
@@ -1037,6 +1084,31 @@ input:checked + .darkLabel{
         margin-bottom: 15px;
     }
 
+    .Slogan{
+        width: 327px;
+        font-size: 20px;
+        line-height: 27px;
+         white-space: normal;
+        margin-top: 100px;
+        margin-left: 49px;
+    }
+
+    .darkSlogan{
+        width: 327px;
+        font-size: 20px;
+        line-height: 27px;
+         white-space: normal;
+        margin-top: 100px;
+        margin-left: 49px;
+    }
+    
+    .cursor{
+        font-size: 21px;
+        margin-top: 128px;
+        margin-left: 288px;
+    }
+    
+
 }
 
 
@@ -1080,6 +1152,8 @@ input:checked + .darkLabel{
         margin-left: 185px;
         width: 170px;
     }
+
+    
 
     .inputValid{
         width: 138px;
@@ -1271,6 +1345,32 @@ input:checked + .darkLabel{
     .flexRow {
         width: 185px;
     }
+
+    .Slogan{
+        width: 327px;
+        font-size: 20px;
+        line-height: 27px;
+        white-space: normal;
+        margin-top: 100px;
+        margin-left: 24px;
+    }
+
+    .darkSlogan{
+        width: 327px;
+        font-size: 20px;
+        line-height: 27px;
+        white-space: normal;
+        margin-top: 100px;
+        margin-left: 24px;
+    }
+    
+    .cursor{
+        font-size: 21px;
+        margin-top: 128px;
+        margin-left: 263px;
+    }
+    
+
 }
 
 
@@ -1456,6 +1556,22 @@ label{
     font-size: 34px;
 }
 
+.Slogan{
+    font-size: 56px;
+    margin-top: 200px;
+    margin-left: 500px;
+}
+
+.darkSlogan{
+    font-size: 56px;
+    margin-top: 200px;
+    margin-left: 500px;
+}
 
 
+.cursor{
+    font-size: 56px;
+    margin-top: 178px;
+    margin-left: 1786px;
+}
 }
