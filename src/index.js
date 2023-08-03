@@ -2,6 +2,7 @@ import { hide, hideElements, clear } from "./function_js/hideAndClear.js";
 import { findExample, findSynonyms, findAntonyms, addInfo, convertElementInNumber } from "./function_js/searchAndAdvertise.js";
 import { change, mediaQueryChange } from "./function_js/change.js";
 import { darkMode } from "./function_js/darkMode.js";
+import { write } from "./function_js/slogan.js"
 
 const def = document.querySelectorAll('#definition > .flex > p');
 const exemple = document.querySelectorAll('#examples > .flex > p');
@@ -20,25 +21,13 @@ const phonetics = document.querySelector('#mot > p:nth-child(2)');
 const partOfSpeech = document.querySelector('#mot > p:nth-child(3)');
 const lienAudio = document.querySelector('#header > p:nth-child(8)');
 
-const container = document.querySelector('.container');
-const logo = document.querySelector('#header > img:nth-child(1)');
-const darkLogo = document.querySelector('#header > img:nth-child(6)');
-const circle = document.querySelector('.circle');
 const rectangle = document.querySelector('.rectangle'); 
 const searchBar = document.querySelector('.inputValid');
 const searchWen = document.querySelector('.search');
-const slogan = document.querySelector('#header > p:nth-child(5)');
 const gears = document.querySelector('#header > img:nth-child(10)'); 
 
 const label1 = document.querySelector('label'); 
-const label2 = document.querySelector('#buttonRow > .button:nth-child(2) > label'); 
-const label3 = document.querySelector('#buttonRow > .button:nth-child(3) > label'); 
-const label4 = document.querySelector('#buttonRow > .button:nth-child(4) > label'); 
-const line = document.querySelector('.line'); 
-const darkWord = document.querySelector('#mot > p:nth-child(1)');
 const soundLogo = document.querySelector('#mot > img:nth-child(4)');
-const darkBullet = document.querySelectorAll('.blackcircle, #blackline'); 
-const darkResponse = document.querySelectorAll('.text, .textTitle');
 
 const modal = document.querySelector('.modal'); 
 const modalContent = document.querySelector('.modalContent'); 
@@ -50,8 +39,6 @@ const labelModal3 = document.querySelector('.modalContent > .buttonModal:nth-chi
 const inputModal3 = document.querySelector('.modalContent > .buttonModal:nth-child(4) > input'); 
 
 const buttonRow = document.querySelector('#buttonRow'); 
-
-const positionButtonRow = window.getComputedStyle(buttonRow).getPropertyValue('position');
 
 hide(mot, definition, examples, synonyms, antonyms); 
 
@@ -114,7 +101,7 @@ function searchButton(){
             findAntonyms(data[0].meanings[0].definitions);  
 
 
-            // la fonction retrieve est composée de sous-fonctions qui permettent d'aller rechercher dans la data de l'API les informations concernant les def-ex-syn-ant et de les ajouter au bon endroit en fonction de leurs nombres et de la fonction convertElementInNumber, elle permet aussi de transformer en "" les p qui ne sont pas concernés et leurs points. // 
+            // la fonction retrieve est composée de sous-fonctions qui permettent d'aller rechercher dans la data de l'API les informations concernant les def-ex-syn-ant et de les ajouter au bon endroit en fonction de leurs nombres et de la fonction convertElementInNumber, elle permet aussi de transformer en "" les p qui ne sont pas concernés et leurs puces. // 
 
             function retrieve(w, x, y, z){
 
@@ -186,7 +173,7 @@ function searchButton(){
     } else {
         errorMessage.textContent = "Enter a word please"
     }
-    console.log(word.textContent);
+
 }
 
 searchWen.addEventListener('click', searchButton); 
