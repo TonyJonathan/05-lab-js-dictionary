@@ -123,8 +123,8 @@ body{
 
 .inputValid{
     font-weight: 700;
-    width: 323px;
-    border-radius: 20px 0px 0px 20px;
+    width: 370px;
+    border-radius: 20px 20px 20px 20px;
     padding-top: 8px;
     padding-bottom: 8px;
     padding-left: 32px;
@@ -134,7 +134,10 @@ body{
     margin-left: 478px; 
     outline: none;
     color: var(--color-grey-text);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+
 }
+
 
 .inputValid:hover, #header > .inputValid:focus{
     border: 2px solid #16C4EA ;
@@ -149,11 +152,13 @@ body{
     border-radius: 0px 20px 20px 0px;
     background-color: #43A2B7;
     padding-top: 8px;
-    padding-bottom: 7px;
+    padding-bottom: 6px;
     padding-left: 14px;
     margin-top: 72px;
     margin-bottom: 29px;
     margin-left: 836px; 
+
+
 }
 
 .slogan{
@@ -461,7 +466,7 @@ input:checked + .darkLabel{
     width: 598px;
     font-size: 26px;
     font-weight: 700;
-    color: #FFF;
+    color: #E3E3E3;
     line-height: 27px;
     margin: 0;
     text-align: center;   
@@ -536,7 +541,6 @@ input:checked + .darkLabel{
     cursor: pointer;    
 }
 
-
 .buttonModal{
     width: 250px;
 }
@@ -579,7 +583,6 @@ input:checked + .darkLabel{
     margin-bottom: 20px;
 }
 
-
 .modalContent > .buttonModal:nth-child(2) > label{
     font-family: 'Merriweather Sans', sans-serif;
 }
@@ -598,8 +601,7 @@ input:checked + .darkLabel{
 
 .buttonModal > .darkLabelModal:hover{
   opacity: 1;
-  background-color: #85558d;
-  
+  background-color: #85558d;  
 }
 
 .buttonModal > input:checked + .darkLabelModal{
@@ -761,7 +763,7 @@ input:checked + .darkLabel{
     }
 
     .inputValid{
-        width: 200px;
+        width: 242px;
         margin-left: 285px; 
     }
 
@@ -915,7 +917,7 @@ input:checked + .darkLabel{
     }
 
     .inputValid{
-        width: 173px;
+        width: 220px;
         margin-left: 20px;
         margin-bottom: 0px;
         margin-top: 140px;
@@ -1156,7 +1158,7 @@ input:checked + .darkLabel{
     
 
     .inputValid{
-        width: 138px;
+        width: 187px;
         margin-left: 14px;
         margin-bottom: 0px;
         margin-top: 140px;
@@ -1168,7 +1170,7 @@ input:checked + .darkLabel{
         margin-top: 140px;
         margin-left: 179px; 
         margin-bottom: 0px;
-        z-index: 1;
+        z-index: 5;
     }
 
     .rectangle{
@@ -1408,8 +1410,8 @@ input:checked + .darkLabel{
     }
     
     .inputValid{
-        width: 900px;
-        border-radius: 32px 0px 0px 32px;
+        width: 977px;
+        border-radius: 32px 32px 32px 32px;
         padding-top: 32px;
         padding-bottom: 32px;
         padding-left: 55px;
@@ -1419,159 +1421,159 @@ input:checked + .darkLabel{
         font-size: 22px;
     }
 
-.search{
-    width: 35px;
-    border-radius: 0px 45px 45px 0px;
-    padding-top: 23px;
-    padding-bottom: 45px;
-    padding-left: 24px;
-    padding-right: 20px;
-    margin-top: 70px;
-    margin-bottom: 29px;
-    margin-left: 1686px; 
-}
+    .search{
+        width: 35px;
+        border-radius: 0px 45px 45px 0px;
+        padding-top: 23px;
+        padding-bottom: 45px;
+        padding-left: 24px;
+        padding-right: 20px;
+        margin-top: 70px;
+        margin-bottom: 29px;
+        margin-left: 1686px; 
+    }
 
-.slogan{
-display: none; 
-}
+    .slogan{
+    display: none; 
+    }
 
-#header > p:nth-child(7){
-    width: 400px;
-    margin-left: 510px;
-    margin-top: 118px;
-    font-size: 16px;
-}
+    #header > p:nth-child(7){
+        width: 400px;
+        margin-left: 510px;
+        margin-top: 118px;
+        font-size: 16px;
+    }
 
-.clearGears{
-    width: max-content;
-    margin-top: 70px;
-    margin-left: 2450px;
-}
+    .clearGears{
+        width: max-content;
+        margin-top: 70px;
+        margin-left: 2450px;
+    }
 
-.clearGears:hover{
-    margin-top: 70px;
-    margin-left: 2450px;
-}
+    .clearGears:hover{
+        margin-top: 70px;
+        margin-left: 2450px;
+    }
 
-#buttonRow{
-    display: flex;
-    margin-left: 60px;
-    margin-top: 40px;
-}
+    #buttonRow{
+        display: flex;
+        margin-left: 60px;
+        margin-top: 40px;
+    }
 
-label{
-    width: 450px;
-    font-size: 36px;
-    padding-top: 20px;
-    padding-bottom: 13px;
-    border-radius: 45px 45px 0px 0px;
-}
+    label{
+        width: 450px;
+        font-size: 36px;
+        padding-top: 20px;
+        padding-bottom: 13px;
+        border-radius: 45px 45px 0px 0px;
+    }
 
-.line{
-    width: 2000px;
-    height: 2px;
-    margin-left: 47px;
-}
+    .line{
+        width: 2000px;
+        height: 2px;
+        margin-left: 47px;
+    }
 
-#mot{
-    margin-left: 100px;
-    margin-top: 30px;
-}
+    #mot{
+        margin-left: 100px;
+        margin-top: 30px;
+    }
 
-#mot > p:nth-child(1){
-    font-size: 84px;
-    font-weight: 700;
-    line-height: 87px;
-    margin: 0;
-    margin-top: 54px;
-    margin-left: 102px;
-}
+    #mot > p:nth-child(1){
+        font-size: 84px;
+        font-weight: 700;
+        line-height: 87px;
+        margin: 0;
+        margin-top: 54px;
+        margin-left: 102px;
+    }
 
-#mot > p:nth-child(2){
-    font-size: 46px;
-    font-weight: 500;
-    line-height: 46px;
-    margin: 0;
-    margin:0;
-    margin-top: 75px;
-    margin-left: 35px;
-    white-space: nowrap;
-}
+    #mot > p:nth-child(2){
+        font-size: 46px;
+        font-weight: 500;
+        line-height: 46px;
+        margin: 0;
+        margin:0;
+        margin-top: 75px;
+        margin-left: 35px;
+        white-space: nowrap;
+    }
 
-#mot > p:nth-child(3){
-    font-size: 46px;
-    font-weight: 500;
-    line-height: 46px;
-    margin:0;
-    margin-top: 75px;
-    margin-left: 35px;
-    font-style: italic;
-}
+    #mot > p:nth-child(3){
+        font-size: 46px;
+        font-weight: 500;
+        line-height: 46px;
+        margin:0;
+        margin-top: 75px;
+        margin-left: 35px;
+        font-style: italic;
+    }
 
-#blackline{
-    width: 1700px;
-    background-color: #000000;
-    height: 1px;
-    margin-top: 30px;
-    margin-left: 120px;
-    margin-bottom: 59px;
-    transition: background-color 1s;
-}
+    #blackline{
+        width: 1700px;
+        background-color: #000000;
+        height: 1px;
+        margin-top: 30px;
+        margin-left: 120px;
+        margin-bottom: 59px;
+        transition: background-color 1s;
+    }
 
-.flex{
-    margin-left: 130px;
-    margin-bottom: 58px;
-}
+    .flex{
+        margin-left: 130px;
+        margin-bottom: 58px;
+    }
 
-.flex > .text {
-    font-size: 30px;
-    margin-left: 40px;
-}
+    .flex > .text {
+        font-size: 30px;
+        margin-left: 40px;
+    }
 
-.blackcircle{
-    min-width: 25px;
-    height: 25px;
-    background-color: var(--color-grey-text);
-    border-radius: 17px;
-    transition: background-color 1s;
-}
+    .blackcircle{
+        min-width: 25px;
+        height: 25px;
+        background-color: var(--color-grey-text);
+        border-radius: 17px;
+        transition: background-color 1s;
+    }
 
-#header > p:nth-child(7){
-    width: 400px;
-    margin-left: 783px;
-    margin-top: 155px;
-    font-size: 22px;
-}
+    #header > p:nth-child(7){
+        width: 400px;
+        margin-left: 783px;
+        margin-top: 155px;
+        font-size: 22px;
+    }
 
-.flexRow{
-    margin-top: 150px;
-    margin-bottom: 60px;
-}
+    .flexRow{
+        margin-top: 150px;
+        margin-bottom: 60px;
+    }
 
-.flexRow > .flex{
-    width: 320px;
-}
+    .flexRow > .flex{
+        width: 320px;
+    }
 
-.flexRow > .flex > p{
-    font-size: 34px;
-}
+    .flexRow > .flex > p{
+        font-size: 34px;
+    }
 
-.Slogan{
-    font-size: 56px;
-    margin-top: 200px;
-    margin-left: 500px;
-}
+    .Slogan{
+        font-size: 56px;
+        margin-top: 200px;
+        margin-left: 500px;
+    }
 
-.darkSlogan{
-    font-size: 56px;
-    margin-top: 200px;
-    margin-left: 500px;
-}
+    .darkSlogan{
+        font-size: 56px;
+        margin-top: 200px;
+        margin-left: 500px;
+    }
 
 
-.cursor{
-    font-size: 56px;
-    margin-top: 178px;
-    margin-left: 1786px;
-}
+    .cursor{
+        font-size: 56px;
+        margin-top: 178px;
+        margin-left: 1786px;
+    }
 }
