@@ -77,8 +77,8 @@ body{
 #header{
     width: 1440px;
     display: grid;
-    grid-template-rows: 141px;
-    grid-template-columns: 1440px;
+    grid-template-rows: 8.8125rem;
+    grid-template-columns: 90rem;
 }
 
 #header > img:nth-child(1), .rectangle, #circle, #header > input:nth-child(3), .search, #header > p:nth-child(5),#header > img:nth-child(6), #header > p:nth-child(7), #header > p:nth-child(8), #header > img:nth-child(10){
@@ -87,23 +87,23 @@ body{
 }
 
 #header > img:nth-child(1){
-    margin-top: 65px;
-    margin-left: 41px;
+    margin-top: 4.0625rem;
+    margin-left: 2.5625rem;
     z-index: 1;
 }
 
 #header > img:nth-child(6){
-    margin-top: 57px;
-    margin-left: 41px;
+    margin-top: 3.5625rem;
+    margin-left: 2.5625rem;
 }
 
 .rectangle{
     width: 46px;
-    max-height: 22px;
-    margin-top: 80px;
-    margin-left: 1280px; /*405*/
+    max-height: 1.375rem;
+    margin-top: 5rem;
+    margin-left: 80rem; /*405*/
     background-color: #000;
-    border-radius: 13px;
+    border-radius: 0.8125rem;
 }
 
 .rectangle:hover{
@@ -113,34 +113,34 @@ body{
 
 .circle{
     width: 16px;
-    height: 16px;
-    margin-top: 3px;
-    margin-left: 26px;
+    height: 1rem;
+    margin-top: 0.1875rem;
+    margin-left: 1.625rem;
     background-color: var(--color-white);
-    border-radius: 11px;
+    border-radius: 0.6875rem;
     transition: margin 0.5s ease-in-out;
 }
 
 .inputValid{
     font-weight: 700;
     width: 370px;
-    border-radius: 20px 20px 20px 20px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 32px;
-    border: 2px solid #43A2B7;
-    margin-top: 72px;
-    margin-bottom: 29px;
-    margin-left: 478px; 
+    border-radius: 1.25rem 1.25rem 1.25rem 1.25rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 2rem;
+    border: 0.125rem solid #43A2B7;
+    margin-top: 4.5rem;
+    margin-bottom: 1.8125rem;
+    margin-left: 29.875rem; 
     outline: none;
     color: var(--color-grey-text);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.4);
 
 }
 
 
 .inputValid:hover, #header > .inputValid:focus{
-    border: 2px solid #16C4EA ;
+    border: 0.125rem solid #16C4EA ;
 }
 
 .inputValid:hover~ .search, #header > .inputValid:focus~ .search {
@@ -149,27 +149,27 @@ body{
 
 .search{
     width: 35px;
-    border-radius: 0px 20px 20px 0px;
+    border-radius: 0rem 1.25rem 1.25rem 0rem;
     background-color: #43A2B7;
-    padding-top: 8px;
-    padding-bottom: 6px;
-    padding-left: 14px;
-    margin-top: 72px;
-    margin-bottom: 29px;
-    margin-left: 836px; 
+    padding-top: 0.5rem;
+    padding-bottom: 0.375rem;
+    padding-left: 0.875rem;
+    margin-top: 4.5rem;
+    margin-bottom: 1.8125rem;
+    margin-left: 52.25rem; 
 
 
 }
 
 .slogan{
     width: 290px;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 700;
     color: #145462;
-    line-height: 27px;
+    line-height: 1.6875rem;
     margin: 0;
-    margin-top: 65px;
-    margin-left: 990px; 
+    margin-top: 4.0625rem;
+    margin-left: 61.875rem; 
     text-align: center;
     display: none;
 }
@@ -178,9 +178,9 @@ body{
     width: 400px;
     color: #ff1c1c;
     margin: 0;
-    margin-left: 510px;
-    margin-top: 118px;
-    font-size: 16px;
+    margin-left: 31.875rem;
+    margin-top: 7.375rem;
+    font-size: 1rem;
     z-index: 1;
 }
 
@@ -195,16 +195,16 @@ display: none;
 .clearGears{
     filter: invert(8%) sepia(1%) saturate(4095%) hue-rotate(314deg) brightness(103%) contrast(80%);
     margin: 0;
-    margin-top: 60px;
-    margin-left: 1350px;
+    margin-top: 3.75rem;
+    margin-left: 84.375rem;
 }
 
 .clearGears:hover{
     filter: invert(59%) sepia(16%) saturate(1375%) hue-rotate(144deg) brightness(93%) contrast(88%);
     opacity: 0.5;
     margin: 0;
-    margin-top: 60px;
-    margin-left: 1350px;
+    margin-top: 3.75rem;
+    margin-left: 84.375rem;
     cursor: pointer;
 }
 
@@ -217,36 +217,36 @@ display: none;
 #page{
     width: 1250px;
     display: flex;
-    margin-top: 79px;
-    margin-left: 43px;
+    margin-top: 4.9375rem;
+    margin-left: 2.6875rem;
 }
 
 .line{
     width: 1150px;
     background-color: #16C4EA;
-    height: 2px;
-    margin-left: 27px;
+    height: 0.125rem;
+    margin-left: 1.6875rem;
     transition: background-color 1s;
 }
 
 #buttonRow{
     display: flex;
-    margin-left: 20px;
+    margin-left: 1.25rem;
 }
 
 label{
     width: 250px;
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 1.5rem;
+    line-height: 1.8125rem;
     font-weight: 700;
     color: var(--color-white);
     background-color: #707070;
     opacity: 0.70;
     display: block;
-    padding-top: 10px;
-    padding-bottom: 3px;
+    padding-top: 0.625rem;
+    padding-bottom: 0.1875rem;
     text-align: center;
-    border-radius: 25px 25px 0px 0px;
+    border-radius: 1.5625rem 1.5625rem 0rem 0rem;
     margin: 0;
     transition: opacity 1s;
 }
@@ -281,32 +281,32 @@ input:checked +label{
 }
 
 #mot > p:nth-child(1){
-    font-size: 64px;
+    font-size: 4rem;
     font-weight: 700;
-    line-height: 87px;
+    line-height: 5.4375rem;
     margin: 0;
-    margin-top: 54px;
-    margin-left: 102px;
+    margin-top: 3.375rem;
+    margin-left: 6.375rem;
 }
 
 #mot > p:nth-child(2){
-    font-size: 36px;
+    font-size: 2.25rem;
     font-weight: 500;
-    line-height: 46px;
+    line-height: 2.875rem;
     margin: 0;
     margin:0;
-    margin-top: 75px;
-    margin-left: 35px;
+    margin-top: 4.6875rem;
+    margin-left: 2.1875rem;
     white-space: nowrap;
 }
 
 #mot > p:nth-child(3){
-    font-size: 36px;
+    font-size: 2.25rem;
     font-weight: 500;
-    line-height: 46px;
+    line-height: 2.875rem;
     margin:0;
-    margin-top: 75px;
-    margin-left: 35px;
+    margin-top: 4.6875rem;
+    margin-left: 2.1875rem;
     font-style: italic;
 }
 
@@ -316,22 +316,22 @@ input:checked +label{
 }
 
 #mot > img:nth-child(4){
-    margin-top: 75px;
-    margin-left: 29px;
-    border: 2px solid rgba(255, 255, 255, 0);
+    margin-top: 4.6875rem;
+    margin-left: 1.8125rem;
+    border: 0.125rem solid rgba(255, 255, 255, 0);
 }
 
 #mot > img:nth-child(4):hover{
-    border: 2px solid #16C4EA;
+    border: 0.125rem solid #16C4EA;
     cursor: pointer;
 }
 
 #blackline{
     width: 1000px;
     background-color: #000000;
-    height: 1px;
-    margin-left: 59px;
-    margin-bottom: 59px;
+    height: 0.0625rem;
+    margin-left: 3.6875rem;
+    margin-bottom: 3.6875rem;
     transition: background-color 1s;
 }
 
@@ -339,23 +339,23 @@ input:checked +label{
     min-width: 15px;
     height: 15px;
     background-color: var(--color-grey-text);
-    border-radius: 11px;
+    border-radius: 0.6875rem;
     transition: background-color 1s;
 }
 
 .flex{
     display: flex;
     align-items: center;
-    margin-left: 57px;
-    margin-bottom: 26px;
+    margin-left: 3.5625rem;
+    margin-bottom: 1.625rem;
 }
 
 .flex > p{
-    font-size: 18px;
-    line-height: 23px;
+    font-size: 1.125rem;
+    line-height: 1.4375rem;
     font-weight: 500;
     margin: 0;
-    margin-left: 24px;
+    margin-left: 1.5rem;
     text-align: justify;
 }
 
@@ -366,7 +366,7 @@ input:checked +label{
 
 .flexRow{
     display: flex;
-    margin-bottom: 60px;
+    margin-bottom: 3.75rem;
 }
 
 .flexRow > .flex{
@@ -374,8 +374,8 @@ input:checked +label{
 }
 
 .flexRow > .flex > p{
-    font-size: 24px;
-    line-height: 34px;  
+    font-size: 1.5rem;
+    line-height: 2.125rem;  
 }
 
 .flexRow > .flex > p:hover{
@@ -390,7 +390,7 @@ input:checked +label{
     min-height: 100vh;
     background-color: var(--color-white);
     transition: background-color 1s;
-    padding-bottom: 50px;
+    padding-bottom: 3.125rem;
 }
 
 .blackContainer{
@@ -418,7 +418,7 @@ input:checked +label{
 
 .darkCircle{
     background-color: #000;
-    margin-left: 4px;
+    margin-left: 0.25rem;
     transition: margin 0.5s ease-in-out;
  
 
@@ -451,7 +451,7 @@ input:checked + .darkLabel{
 }
 
 .darkSearchBar {
-    border: 2px solid #108AE2;
+    border: 0.125rem solid #108AE2;
     transition: border-color 1s;
 }
 
@@ -464,15 +464,15 @@ input:checked + .darkLabel{
     grid-row-start: 1;
     grid-column-start: 1;
     width: 598px;
-    font-size: 26px;
+    font-size: 1.625rem;
     font-weight: 700;
     color: #E3E3E3;
-    line-height: 27px;
+    line-height: 1.6875rem;
     margin: 0;
     text-align: center;   
     white-space: nowrap; 
-    margin-top: 103px;
-    margin-left: 300px;
+    margin-top: 6.4375rem;
+    margin-left: 18.75rem;
     color: #108AE2;
     transition: color 1s;
 }
@@ -520,23 +520,23 @@ input:checked + .darkLabel{
 
 .modalContent {
     background-color: #fff;
-    padding: 7px 0px 20px 45px;
-    border-radius: 15px;
+    padding: 0.4375rem 0rem 1.25rem 2.8125rem;
+    border-radius: 0.9375rem;
     max-width: 300px;
     margin: 15% auto;
     position: relative;
-    border: 3px solid #6d0b7c;
+    border: 0.1875rem solid #6d0b7c;
     display: block;
 }
 
 .modalContent > img{
     transform: rotate(45deg);
-    margin-left: 260px;
+    margin-left: 16.25rem;
 }
 
 .modalContent > img:hover{
     transform: rotate(45deg);
-    margin-left: 260px;
+    margin-left: 16.25rem;
     filter: invert(13%) sepia(98%) saturate(3319%) hue-rotate(303deg) brightness(88%) contrast(109%);
     cursor: pointer;    
 }
@@ -547,17 +547,17 @@ input:checked + .darkLabel{
 
 .buttonModal > label {
     width: 250px;
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 1.5rem;
+    line-height: 1.8125rem;
     font-weight: 700;
     color: var(--color-white);
     background-color: #707070;
     opacity: 0.70;
     display: block;
-     padding-top: 15px;
-    padding-bottom: 15px;
+     padding-top: 0.9375rem;
+    padding-bottom: 0.9375rem;
     text-align: center;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 0.625rem 0.625rem 0.625rem 0.625rem;
     margin: 0;
     transition: opacity 1s;    
 }
@@ -580,7 +580,7 @@ input:checked + .darkLabel{
 }
 
 .modalContent > .buttonModal > label {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
 }
 
 .modalContent > .buttonModal:nth-child(2) > label{
@@ -621,24 +621,24 @@ input:checked + .darkLabel{
     grid-row-start: 1;
     grid-column-start: 1;
     width: 598px;
-    font-size: 26px;
+    font-size: 1.625rem;
     font-weight: 700;
     color: #145462;
-    line-height: 27px;
+    line-height: 1.6875rem;
     margin: 0;
     text-align: center;   
     white-space: nowrap; 
-    margin-top: 103px;
-    margin-left: 300px;
+    margin-top: 6.4375rem;
+    margin-left: 18.75rem;
 }
 
 .cursor{
     grid-row-start: 1;
     grid-column-start: 1;
-    font-size: 29px;
+    font-size: 1.8125rem;
     color: #145462;
-    margin-top: 98px;
-    margin-left: 896px;
+    margin-top: 6.125rem;
+    margin-left: 56rem;
 }
 
 .darkCursor{
@@ -662,27 +662,27 @@ input:checked + .darkLabel{
     }
 
     .inputValid{
-        margin-left: 360px; 
+        margin-left: 22.5rem; 
     }
 
     .search{
-        margin-left: 719px; 
+        margin-left: 44.9375rem; 
     }
 
     .rectangle{
-        margin-left: 860px;
+        margin-left: 53.75rem;
     }
 
     #header > p:nth-child(7){
-        margin-left: 380px;
+        margin-left: 23.75rem;
     }
 
     .clearGears{
-        margin-left: 920px;
+        margin-left: 57.5rem;
     }
 
     .clearGears:hover{
-        margin-left: 920px;
+        margin-left: 57.5rem;
     }
 
     label{
@@ -694,22 +694,22 @@ input:checked + .darkLabel{
     }
 
     #mot > p:nth-child(1){
-        font-size: 50px;
+        font-size: 3.125rem;
     }
     #mot > p:nth-child(2){
-        font-size: 26px;
+        font-size: 1.625rem;
     }
     #mot > p:nth-child(3){
-        font-size: 26px;
+        font-size: 1.625rem;
     }
 
     #mot > img:nth-child(4){
-        margin-top: 70px;
+        margin-top: 4.375rem;
     }
     
     #blackline{
         width: 800px;
-        margin-left: 25px;
+        margin-left: 1.5625rem;
     }
 
     .flex > .text {
@@ -721,25 +721,25 @@ input:checked + .darkLabel{
     }
 
     .flexRow > .flex > p{
-        font-size: 18px;
-        line-height: 34px;  
+        font-size: 1.125rem;
+        line-height: 2.125rem;  
     }
 
     .Slogan{
-        margin-top: 100px;
-        margin-left: 200px;
+        margin-top: 6.25rem;
+        margin-left: 12.5rem;
     }
 
     .darkSlogan{
-        margin-top: 100px;
-        margin-left: 200px;
+        margin-top: 6.25rem;
+        margin-left: 12.5rem;
     }
     
     
     .cursor{
-        font-size: 29px;
-        margin-top: 95px;
-        margin-left: 796px;
+        font-size: 1.8125rem;
+        margin-top: 5.9375rem;
+        margin-left: 49.75rem;
     }
 }
 
@@ -764,21 +764,21 @@ input:checked + .darkLabel{
 
     .inputValid{
         width: 242px;
-        margin-left: 285px; 
+        margin-left: 17.8125rem; 
     }
 
     .search{
-        margin-left: 515px; 
-        padding-top: 9px;
+        margin-left: 32.1875rem; 
+        padding-top: 0.5625rem;
     }
 
     .rectangle{
-        margin-left: 630px;
+        margin-left: 39.375rem;
     }
 
     #header > p:nth-child(7){
-        margin-left: 300px;
-        font-size: 12px;
+        margin-left: 18.75rem;
+        font-size: 0.75rem;
     }
 
     .slogan{
@@ -786,16 +786,16 @@ input:checked + .darkLabel{
     }
 
     .clearGears{
-        margin-left: 690px;
+        margin-left: 43.125rem;
     }
 
     .clearGears:hover{
-        margin-left: 690px;
+        margin-left: 43.125rem;
     }
 
     label{
         width: 150px;
-        font-size: 18px;
+        font-size: 1.125rem;
     }
 
     .line{
@@ -803,20 +803,20 @@ input:checked + .darkLabel{
     }
 
     #mot > p:nth-child(1){
-        font-size: 30px;
-        margin-top: 30px;
+        font-size: 1.875rem;
+        margin-top: 1.875rem;
     }
     #mot > p:nth-child(2){
-        font-size: 20px;
-        margin-top: 51px;
+        font-size: 1.25rem;
+        margin-top: 3.1875rem;
     }
     #mot > p:nth-child(3){
-        font-size: 20px;
-        margin-top: 51px;
+        font-size: 1.25rem;
+        margin-top: 3.1875rem;
     }
 
     #mot > img:nth-child(4){
-        margin-top: 46px;
+        margin-top: 2.875rem;
     }
 
     #blackline{
@@ -832,8 +832,8 @@ input:checked + .darkLabel{
     }
 
     .flexRow > .flex > p{
-        font-size: 14px;
-        line-height: 34px;  
+        font-size: 0.875rem;
+        line-height: 2.125rem;  
     }
 
     .modalContent {
@@ -841,7 +841,7 @@ input:checked + .darkLabel{
     }
     
     .modalContent > img{
-        margin-left: 210px;
+        margin-left: 13.125rem;
     }
     
     .modalContent > img:hover{
@@ -851,28 +851,28 @@ input:checked + .darkLabel{
      
     .buttonModal > label {
         width: 200px;
-        font-size: 18px;
-        line-height: 20px;
+        font-size: 1.125rem;
+        line-height: 1.25rem;
     }
 
     .Slogan{
         width: 457px;
-        font-size: 20px;
-        margin-top: 100px;
-        margin-left: 150px;
+        font-size: 1.25rem;
+        margin-top: 6.25rem;
+        margin-left: 9.375rem;
     }
 
     .darkSlogan{
         width: 457px;
-        font-size: 20px;
-        margin-top: 100px;
-        margin-left: 150px;
+        font-size: 1.25rem;
+        margin-top: 6.25rem;
+        margin-left: 9.375rem;
     }
     
     .cursor{
-        font-size: 21px;
-        margin-top: 100px;
-        margin-left: 609px;
+        font-size: 1.3125rem;
+        margin-top: 6.25rem;
+        margin-left: 38.0625rem;
     }
     
     
@@ -887,8 +887,8 @@ input:checked + .darkLabel{
     }
 
     #header{
-        grid-template-rows: 181px;
-        grid-template-columns: 425px;
+        grid-template-rows: 11.3125rem;
+        grid-template-columns: 26.5625rem;
         width: 414px;
     }
 
@@ -899,70 +899,70 @@ input:checked + .darkLabel{
 
     #header > img:nth-child(1){
         width: 230px;
-        margin-top: 35px;
-        margin-left: 8px;
+        margin-top: 2.1875rem;
+        margin-left: 0.5rem;
         
     }
 
     #header > img:nth-child(6){
         width: 230px;
-        margin-top: 27px;
-        margin-left: 8px;
+        margin-top: 1.6875rem;
+        margin-left: 0.5rem;
     }
     .slogan{
-        font-size: 12px;
-        line-height: 18px;
-        margin-top: 41px;
-        margin-left: 240px;
+        font-size: 0.75rem;
+        line-height: 1.125rem;
+        margin-top: 2.5625rem;
+        margin-left: 15rem;
         width: 170px;
     }
 
     .inputValid{
         width: 300px;
-        margin-left: 46px;
-        margin-bottom: 0px;
-        margin-top: 140px;
+        margin-left: 2.875rem;
+        margin-bottom: 0rem;
+        margin-top: 8.75rem;
     }
 
     .search{
-        margin-top: 140px;
-        margin-left: 335px; 
-        margin-bottom: 0px;
+        margin-top: 8.75rem;
+        margin-left: 20.9375rem; 
+        margin-bottom: 0rem;
         z-index: 1;
     }
 
 
 
     .clearGears{
-        margin-left: 690px;
+        margin-left: 43.125rem;
     }
 
     .clearGears:hover{
-        margin-left: 690px;
+        margin-left: 43.125rem;
     }
 
     #header > p:nth-child(7){
-        margin-top: 190px;
-        margin-left: 40px;
-        font-size: 12px;
+        margin-top: 11.875rem;
+        margin-left: 2.5rem;
+        font-size: 0.75rem;
     }
 
     .rectangle{
      
-        margin-top: 49px;
+        margin-top: 3.0625rem;
         z-index: 1; 
-        margin-left: 300px;
+        margin-left: 18.75rem;
     }
 
     .clearGears{
-        margin-top: 25px;
-        margin-left: 357px;
+        margin-top: 1.5625rem;
+        margin-left: 22.3125rem;
         z-index: 1;
     }
 
     .clearGears:hover{
-        margin-top: 25px;
-        margin-left: 312px;
+        margin-top: 1.5625rem;
+        margin-left: 19.5rem;
         z-index: 1;
     }
 
@@ -981,16 +981,16 @@ input:checked + .darkLabel{
 
     .button > label{
         width: 105px;
-        font-size: 14px;
+        font-size: 0.875rem;
         border-radius: 0;
-        border-top: solid 1px;
-        border-right: solid 1px;
-        line-height: 50px;
+        border-top: solid 0.0625rem;
+        border-right: solid 0.0625rem;
+        line-height: 3.125rem;
         opacity: 1;
         background-color: #909090;
         transition: background-color 1s;
-        padding-top: 7px;
-        padding-bottom: 6px;
+        padding-top: 0.4375rem;
+        padding-bottom: 0.375rem;
     }
 
      .button > .darkLabel{
@@ -1007,29 +1007,29 @@ input:checked + .darkLabel{
     }
 
     #mot > p:nth-child(1){
-        font-size: 18px;
-        margin-top: 30px;
-        margin-left: 30px;
+        font-size: 1.125rem;
+        margin-top: 1.875rem;
+        margin-left: 1.875rem;
     }
     #mot > p:nth-child(2){
-        font-size: 12px;
-        margin-top: 51px;
-        margin-left: 10px;
+        font-size: 0.75rem;
+        margin-top: 3.1875rem;
+        margin-left: 0.625rem;
     }
     #mot > p:nth-child(3){
-        font-size: 12px;
-        margin-top: 51px;
-        margin-left: 10px;
+        font-size: 0.75rem;
+        margin-top: 3.1875rem;
+        margin-left: 0.625rem;
     }
 
     #mot > img:nth-child(4){
-        margin-top: 46px;
-        margin-left: 10px;
+        margin-top: 2.875rem;
+        margin-left: 0.625rem;
     }
 
     #blackline{
         width: 360px;
-        margin-left: 20px;
+        margin-left: 1.25rem;
     }
 
     .blackcircle{
@@ -1039,13 +1039,13 @@ input:checked + .darkLabel{
 
     .flex > .text {
         width: 318px;
-        font-size: 12px;
-        margin-left: 12px;
+        font-size: 0.75rem;
+        margin-left: 0.75rem;
     }
 
     .flex {
         width: 350px;
-        margin-left: 28px;
+        margin-left: 1.75rem;
        
     }
 
@@ -1065,55 +1065,55 @@ input:checked + .darkLabel{
 
     .flexRow > .flex > p{
         width: 200px;
-        font-size: 14px;
-        line-height: 34px;  
+        font-size: 0.875rem;
+        line-height: 2.125rem;  
     }
 
     .modalContent {
         max-width:150px;
-        padding-left: 25px;
-        padding-bottom: 15px;
+        padding-left: 1.5625rem;
+        padding-bottom: 0.9375rem;
     }
     
     .modalContent > img{
         width: 20px;
         height: 20px;
-        margin-left: 120px;
+        margin-left: 7.5rem;
     }
     
     .modalContent > img:hover{
-        margin-left: 120px;  
+        margin-left: 7.5rem;  
     }
      
     .modalContent > .buttonModal > label {
         width: 120px;
-        font-size: 16px;
-        line-height: 15px;
-        margin-bottom: 15px;
+        font-size: 1rem;
+        line-height: 0.9375rem;
+        margin-bottom: 0.9375rem;
     }
 
     .Slogan{
         width: 327px;
-        font-size: 20px;
-        line-height: 27px;
+        font-size: 1.25rem;
+        line-height: 1.6875rem;
          white-space: normal;
-        margin-top: 100px;
-        margin-left: 49px;
+        margin-top: 6.25rem;
+        margin-left: 3.0625rem;
     }
 
     .darkSlogan{
         width: 327px;
-        font-size: 20px;
-        line-height: 27px;
+        font-size: 1.25rem;
+        line-height: 1.6875rem;
          white-space: normal;
-        margin-top: 100px;
-        margin-left: 49px;
+        margin-top: 6.25rem;
+        margin-left: 3.0625rem;
     }
     
     .cursor{
-        font-size: 21px;
-        margin-top: 128px;
-        margin-left: 288px;
+        font-size: 1.3125rem;
+        margin-top: 8rem;
+        margin-left: 18rem;
     }
     
 
@@ -1136,28 +1136,28 @@ input:checked + .darkLabel{
 
     #header > img:nth-child(1){
         width: 200px;
-        margin-top: 35px;
-        margin-left: 8px;
+        margin-top: 2.1875rem;
+        margin-left: 0.5rem;
         
     }
 
     #header > img:nth-child(6){
         width: 200px;
-        margin-top: 27px;
-        margin-left: 8px;
+        margin-top: 1.6875rem;
+        margin-left: 0.5rem;
     }
 
     #header > p:nth-child(7){
-        margin-top: 190px;
-        margin-left: 40px;
-        font-size: 12px;
+        margin-top: 11.875rem;
+        margin-left: 2.5rem;
+        font-size: 0.75rem;
     }
 
     .slogan{
-        font-size: 12px;
-        line-height: 18px;
-        margin-top: 41px;
-        margin-left: 185px;
+        font-size: 0.75rem;
+        line-height: 1.125rem;
+        margin-top: 2.5625rem;
+        margin-left: 11.5625rem;
         width: 170px;
     }
 
@@ -1165,42 +1165,42 @@ input:checked + .darkLabel{
 
     .inputValid{
         width: 267px;
-        margin-left: 43px;
-        margin-bottom: 0px;
-        margin-top: 140px;
-        padding-left: 22px;
+        margin-left: 2.6875rem;
+        margin-bottom: 0rem;
+        margin-top: 8.75rem;
+        padding-left: 1.375rem;
         z-index: 4;
     }
 
     .search{
-        margin-top: 140px;
-        margin-left: 289px; 
-        margin-bottom: 0px;
+        margin-top: 8.75rem;
+        margin-left: 18.0625rem; 
+        margin-bottom: 0rem;
         z-index: 5;
     }
 
     .rectangle{
      
-        margin-top: 49px;
+        margin-top: 3.0625rem;
         
         z-index: 1; 
-        margin-left: 257px;
+        margin-left: 16.0625rem;
     }
 
     .clearGears{
-        margin-top: 25px;
-        margin-left: 312px;
+        margin-top: 1.5625rem;
+        margin-left: 19.5rem;
         z-index: 1;
     }
 
     .clearGears:hover{
-        margin-top: 25px;
-        margin-left: 312px;
+        margin-top: 1.5625rem;
+        margin-left: 19.5rem;
         z-index: 1;
     }
 
     #header > p:nth-child(7){
-        margin-left: 31px;
+        margin-left: 1.9375rem;
     }
 
     .line{
@@ -1223,16 +1223,16 @@ input:checked + .darkLabel{
 
     .button > label{
         width: 93px;
-        font-size: 13px;
+        font-size: 0.8125rem;
         border-radius: 0;
-        border-top: solid 1px;
-        border-right: solid 1px;
-        line-height: 50px;
+        border-top: solid 0.0625rem;
+        border-right: solid 0.0625rem;
+        line-height: 3.125rem;
         opacity: 1;
         background-color: #909090;
         transition: background-color 1s;
-        padding-top: 7px;
-        padding-bottom: 6px;
+        padding-top: 0.4375rem;
+        padding-bottom: 0.375rem;
     }
 
      .button > .darkLabel{
@@ -1249,29 +1249,29 @@ input:checked + .darkLabel{
     }
 
     #mot > p:nth-child(1){
-        font-size: 18px;
-        margin-top: 30px;
-        margin-left: 30px;
+        font-size: 1.125rem;
+        margin-top: 1.875rem;
+        margin-left: 1.875rem;
     }
     #mot > p:nth-child(2){
-        font-size: 12px;
-        margin-top: 51px;
-        margin-left: 10px;
+        font-size: 0.75rem;
+        margin-top: 3.1875rem;
+        margin-left: 0.625rem;
     }
     #mot > p:nth-child(3){
-        font-size: 12px;
-        margin-top: 51px;
-        margin-left: 10px;
+        font-size: 0.75rem;
+        margin-top: 3.1875rem;
+        margin-left: 0.625rem;
     }
 
     #mot > img:nth-child(4){
-        margin-top: 46px;
-        margin-left: 10px;
+        margin-top: 2.875rem;
+        margin-left: 0.625rem;
     }
 
     #blackline{
         width: 330px;
-        margin-left: 14px;
+        margin-left: 0.875rem;
     }
 
     .blackcircle{
@@ -1280,14 +1280,14 @@ input:checked + .darkLabel{
     }
 
     .flex > .text {
-        width: 318px;
-        font-size: 12px;
-        margin-left: 12px;
+        width: 19.875rem;
+        font-size: 0.75rem;
+        margin-left: 0.75rem;
     }
 
     .flex {
         width: 350px;
-        margin-left: 28px;
+        margin-left: 1.75rem;
        
     }
 
@@ -1307,20 +1307,20 @@ input:checked + .darkLabel{
 
     .flexRow > .flex > p{
         width: 200px;
-        font-size: 14px;
-        line-height: 34px;  
+        font-size: 0.875rem;
+        line-height: 2.125rem;  
     }
 
     .modalContent {
-        max-width:150px;
-        padding-left: 25px;
-        padding-bottom: 15px;
+        max-width:9.375rem;
+        padding-left: 1.5625rem;
+        padding-bottom: 0.9375rem;
     }
     
     .modalContent > img{
         width: 20px;
         height: 20px;
-        margin-left: 120px;
+        margin-left: 7.5rem;
     }
     
     .modalContent > img:hover{
@@ -1329,9 +1329,9 @@ input:checked + .darkLabel{
      
     .modalContent > .buttonModal > label {
         width: 120px;
-        font-size: 16px;
-        line-height: 15px;
-        margin-bottom: 15px;
+        font-size: 1rem;
+        line-height: 0.9375rem;
+        margin-bottom: 0.9375rem;
     }
 
 
@@ -1341,13 +1341,13 @@ input:checked + .darkLabel{
 
     .flex {
         width: 320px;
-        margin-left: 16px;
+        margin-left: 1rem;
     }
 
     .flex > .text {
         width: 300px;
-        font-size: 12px;
-        margin-left: 12px;
+        font-size: 0.75rem;
+        margin-left: 0.75rem;
     }
 
     .flexRow {
@@ -1356,26 +1356,26 @@ input:checked + .darkLabel{
 
     .Slogan{
         width: 327px;
-        font-size: 20px;
-        line-height: 27px;
+        font-size: 1.25rem;
+        line-height: 1.6875rem;
         white-space: normal;
-        margin-top: 100px;
-        margin-left: 24px;
+        margin-top: 6.25rem;
+        margin-left: 1.5rem;
     }
 
     .darkSlogan{
         width: 327px;
-        font-size: 20px;
-        line-height: 27px;
+        font-size: 1.25rem;
+        line-height: 1.6875rem;
         white-space: normal;
-        margin-top: 100px;
-        margin-left: 24px;
+        margin-top: 6.25rem;
+        margin-left: 1.5rem;
     }
     
     .cursor{
-        font-size: 21px;
-        margin-top: 128px;
-        margin-left: 263px;
+        font-size: 1.3125rem;
+        margin-top: 8rem;
+        margin-left: 16.4375rem;
     }
     
 
@@ -1390,53 +1390,53 @@ input:checked + .darkLabel{
     }
 
     #header > img:nth-child(1){
-        margin-top: 77px;
-        margin-left: 90px;
+        margin-top: 4.8125rem;
+        margin-left: 5.625rem;
     }
     
     #header > img:nth-child(6){
-        margin-top: 68px;
-        margin-left: 90px;
+        margin-top: 4.25rem;
+        margin-left: 5.625rem;
     }
     
     .rectangle{
         width: 92px;
         max-height: 44px;
-        margin-top: 80px;
-        margin-left: 2305px; 
-        border-radius: 22px;
+        margin-top: 5rem;
+        margin-left: 144.0625rem; 
+        border-radius: 1.375rem;
     }
     
     .circle{
         width: 32px;
         height: 32px;
-        margin-top: 6px;
-        margin-left: 6px;
-        border-radius: 16px;
+        margin-top: 0.375rem;
+        margin-left: 0.375rem;
+        border-radius: 1rem;
     }
     
     .inputValid{
         width: 977px;
-        border-radius: 32px 32px 32px 32px;
-        padding-top: 32px;
-        padding-bottom: 32px;
-        padding-left: 55px;
-        margin-top: 70px;
-        margin-bottom: 29px;
-        margin-left: 728px; 
-        font-size: 22px;
+        border-radius: 2rem 2rem 2rem 2rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        padding-left: 3.4375rem;
+        margin-top: 4.375rem;
+        margin-bottom: 1.8125rem;
+        margin-left: 45.5rem; 
+        font-size: 1.375rem;
     }
 
     .search{
         width: 35px;
-        border-radius: 0px 45px 45px 0px;
-        padding-top: 23px;
-        padding-bottom: 45px;
-        padding-left: 24px;
-        padding-right: 20px;
-        margin-top: 70px;
-        margin-bottom: 29px;
-        margin-left: 1686px; 
+        border-radius: 0rem 2.8125rem 2.8125rem 0rem;
+        padding-top: 1.4375rem;
+        padding-bottom: 2.8125rem;
+        padding-left: 1.5rem;
+        padding-right: 1.25rem;
+        margin-top: 4.375rem;
+        margin-bottom: 1.8125rem;
+        margin-left: 105.375rem; 
     }
 
     .slogan{
@@ -1445,115 +1445,115 @@ input:checked + .darkLabel{
 
     #header > p:nth-child(7){
         width: 400px;
-        margin-left: 510px;
-        margin-top: 118px;
-        font-size: 16px;
+        margin-left: 31.875rem;
+        margin-top: 7.375rem;
+        font-size: 1rem;
     }
 
     .clearGears{
         width: max-content;
-        margin-top: 70px;
-        margin-left: 2450px;
+        margin-top: 4.375rem;
+        margin-left: 153.125rem;
     }
 
     .clearGears:hover{
-        margin-top: 70px;
-        margin-left: 2450px;
+        margin-top: 4.375rem;
+        margin-left: 153.125rem;
     }
 
     #buttonRow{
         display: flex;
-        margin-left: 60px;
-        margin-top: 40px;
+        margin-left: 3.75rem;
+        margin-top: 2.5rem;
     }
 
     label{
         width: 450px;
-        font-size: 36px;
-        padding-top: 20px;
-        padding-bottom: 13px;
-        border-radius: 45px 45px 0px 0px;
+        font-size: 2.25rem;
+        padding-top: 1.25rem;
+        padding-bottom: 0.8125rem;
+        border-radius: 2.8125rem 2.8125rem 0rem 0rem;
     }
 
     .line{
         width: 2000px;
-        height: 2px;
-        margin-left: 47px;
+        height: 0.125rem;
+        margin-left: 2.9375rem;
     }
 
     #mot{
-        margin-left: 100px;
-        margin-top: 30px;
+        margin-left: 6.25rem;
+        margin-top: 1.875rem;
     }
 
     #mot > p:nth-child(1){
-        font-size: 84px;
+        font-size: 5.25rem;
         font-weight: 700;
-        line-height: 87px;
+        line-height: 5.4375rem;
         margin: 0;
-        margin-top: 54px;
-        margin-left: 102px;
+        margin-top: 3.375rem;
+        margin-left: 6.375rem;
     }
 
     #mot > p:nth-child(2){
-        font-size: 46px;
+        font-size: 2.875rem;
         font-weight: 500;
-        line-height: 46px;
+        line-height: 2.875rem;
         margin: 0;
         margin:0;
-        margin-top: 75px;
-        margin-left: 35px;
+        margin-top: 4.6875rem;
+        margin-left: 2.1875rem;
         white-space: nowrap;
     }
 
     #mot > p:nth-child(3){
-        font-size: 46px;
+        font-size: 2.875rem;
         font-weight: 500;
-        line-height: 46px;
+        line-height: 2.875rem;
         margin:0;
-        margin-top: 75px;
-        margin-left: 35px;
+        margin-top: 4.6875rem;
+        margin-left: 2.1875rem;
         font-style: italic;
     }
 
     #blackline{
         width: 1700px;
         background-color: #000000;
-        height: 1px;
-        margin-top: 30px;
-        margin-left: 120px;
-        margin-bottom: 59px;
+        height: 0.0625rem;
+        margin-top: 1.875rem;
+        margin-left: 7.5rem;
+        margin-bottom: 3.6875rem;
         transition: background-color 1s;
     }
 
     .flex{
-        margin-left: 130px;
-        margin-bottom: 58px;
+        margin-left: 8.125rem;
+        margin-bottom: 3.625rem;
     }
 
     .flex > .text {
-        font-size: 30px;
-        margin-left: 40px;
+        font-size: 1.875rem;
+        margin-left: 2.5rem;
     }
 
     .blackcircle{
         min-width: 25px;
         height: 25px;
         background-color: var(--color-grey-text);
-        border-radius: 17px;
+        border-radius: 1.0625rem;
         transition: background-color 1s;
     }
 
     #header > p:nth-child(7){
         width: 400px;
-        margin-left: 783px;
-        margin-top: 155px;
-        font-size: 22px;
+        margin-left: 48.9375rem;
+        margin-top: 9.6875rem;
+        font-size: 1.375rem;
     }
 
     .flexRow{
-        margin-top: 150px;
-        margin-bottom: 60px;
+        margin-top: 9.375rem;
+        margin-bottom: 3.75rem;
     }
 
     .flexRow > .flex{
@@ -1561,25 +1561,25 @@ input:checked + .darkLabel{
     }
 
     .flexRow > .flex > p{
-        font-size: 34px;
+        font-size: 2.125rem;
     }
 
     .Slogan{
-        font-size: 56px;
-        margin-top: 200px;
-        margin-left: 500px;
+        font-size: 3.5rem;
+        margin-top: 12.5rem;
+        margin-left: 31.25rem;
     }
 
     .darkSlogan{
-        font-size: 56px;
-        margin-top: 200px;
-        margin-left: 500px;
+        font-size: 3.5rem;
+        margin-top: 12.5rem;
+        margin-left: 31.25rem;
     }
 
 
     .cursor{
-        font-size: 56px;
-        margin-top: 178px;
-        margin-left: 1786px;
+        font-size: 3.5rem;
+        margin-top: 11.125rem;
+        margin-left: 111.625rem;
     }
 }
