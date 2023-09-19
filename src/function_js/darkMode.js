@@ -22,7 +22,7 @@ const modalContent = document.querySelector('.modalContent');
 const labelModal1 = document.querySelector('.modalContent > .buttonModal:nth-child(2) > label'); 
 const labelModal2 = document.querySelector('.modalContent > .buttonModal:nth-child(3) > label'); 
 const labelModal3 = document.querySelector('.modalContent > .buttonModal:nth-child(4) > label'); 
- 
+
 
 export function darkMode() {
 

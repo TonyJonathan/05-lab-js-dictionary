@@ -909,6 +909,8 @@ input:checked + .darkLabel{
         margin-top: 1.6875rem;
         margin-left: 0.5rem;
     }
+
+
     .slogan{
         font-size: 0.75rem;
         line-height: 1.125rem;
@@ -962,7 +964,7 @@ input:checked + .darkLabel{
 
     .clearGears:hover{
         margin-top: 1.5625rem;
-        margin-left: 19.5rem;
+        margin-left: 22.3125rem;
         z-index: 1;
     }
 
